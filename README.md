@@ -9,6 +9,7 @@ By MV2 of Munim, Inc. (mv2@munimtech.com). The code and text were made by AI age
 - **Pre-registration:** [prereg/ew-backtest-prereg-v1-2026-10-28.md](prereg/ew-backtest-prereg-v1-2026-10-28.md). The rules, outcomes, hypotheses (H1-H6), predictions and readings were fixed before any result existed.
 - **Results (v0.2.0):** [results/ew-backtest-results-v1-2026-10-29.md](results/ew-backtest-results-v1-2026-10-29.md), graded exactly as written; job outputs in [results/ew-bt-v1/](results/ew-bt-v1/). In all 50 states and DC, the wastewater rule beat random timing for all three viruses (PPV 0.36, 0.51 and 0.44 against 0.12 to 0.15 by chance). It was not significantly earlier than the same rule on ED data for any of them, and it caught only 37% of influenza and 26% of RSV ED surges. The pre-registered reading: state wastewater gave confirmation, not lead. 11 of 16 predictions held.
 - **Report (v0.2.0):** `ew/report.py` 1.1 turns the weekly series into one static HTML page that shows where the rule stands in every state now. Given the back-test's `results.json` and `states.csv`, it also shows how often each rule's alerts were right and each state's own record. It applies the pre-registered rule as written and fits nothing new.
+- **Follow-up study (v0.3.0, pre-registered, results pending):** [prereg/ew-agg-prereg-v1-2026-10-29.md](prereg/ew-agg-prereg-v1-2026-10-29.md). Was v1's result a property of the state median? `ew/agg.py` runs the same rule on a population-weighted mean and on the upper quartile of the same site values, and tests whether either catches the ED surges the median missed or comes earlier than the ED-only rule.
 
 ## What it does
 
@@ -33,6 +34,7 @@ All thresholds use past weeks only. Outputs are aggregate public data: `results.
 python -m unittest discover -v
 python -m ew.run --out-dir out
 python -m ew.report --series out/series.csv --backtest out/results.json --states out/states.csv --out-dir out/report
+python -m ew.agg --out-dir out/agg
 ```
 
 Python 3.11+, standard library only. Fetching needs network access to data.cdc.gov.
