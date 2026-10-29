@@ -1,0 +1,154 @@
+state,pathogen,events,median_sites,ww_detected,ww_true,ww_false,ww_in_episode,ed_detected,ed_true,ed_false,ed_in_episode,both_detected,both_true,both_false,both_in_episode
+Alabama,covid,6,13.0,5,5,3,1,5,5,3,0,6,6,3,1
+Alabama,influenza,3,10.0,2,2,2,2,1,1,4,1,2,2,1,2
+Alabama,rsv,3,10.0,0,0,1,4,1,1,3,0,0,0,0,3
+Alaska,covid,4,4.0,1,1,8,3,3,3,7,2,1,1,5,3
+Alaska,influenza,4,4.0,1,1,4,2,4,4,1,1,1,1,4,2
+Alaska,rsv,3,4.0,0,0,2,2,3,3,1,0,0,0,1,2
+Arizona,covid,3,16.0,3,3,4,2,2,2,3,1,3,3,4,1
+Arizona,influenza,3,17,0,0,0,2,3,3,1,1,0,0,0,2
+Arizona,rsv,3,10,0,0,0,1,3,3,0,0,0,0,0,1
+Arkansas,covid,5,6.0,2,2,5,4,5,5,2,2,2,2,4,1
+Arkansas,influenza,3,6,2,2,0,3,2,2,2,2,2,2,0,3
+Arkansas,rsv,2,6.0,0,0,4,3,1,1,2,1,0,0,1,1
+California,covid,5,80.0,2,2,4,1,5,5,1,0,3,3,2,2
+California,influenza,3,79.0,3,3,2,0,3,3,1,0,3,3,0,1
+California,rsv,3,79.0,3,3,0,0,2,2,2,0,3,3,0,0
+Colorado,covid,3,23.0,2,2,5,0,3,3,2,0,2,2,3,0
+Colorado,influenza,3,22.0,1,1,0,2,2,2,2,0,1,1,0,2
+Colorado,rsv,3,22,0,0,1,3,1,1,2,0,0,0,1,2
+Connecticut,covid,4,12.0,1,1,8,0,4,4,3,0,2,2,6,1
+Connecticut,influenza,4,5.0,2,2,0,0,4,4,0,1,2,2,0,0
+Connecticut,rsv,3,5,0,0,0,2,2,2,1,1,0,0,0,2
+Delaware,covid,3,8,3,3,4,2,3,3,4,0,3,3,3,0
+Delaware,influenza,3,8,1,1,0,3,1,1,2,3,1,1,0,4
+Delaware,rsv,3,8,0,0,2,3,3,3,0,0,0,0,0,3
+District of Columbia,covid,4,1,0,0,7,3,4,4,4,0,0,0,5,3
+District of Columbia,influenza,4,1,1,1,1,1,3,3,0,1,1,1,0,1
+District of Columbia,rsv,2,1,0,0,1,2,1,1,4,1,0,0,2,0
+Florida,covid,4,19.0,2,2,2,2,4,4,0,0,2,2,2,2
+Florida,influenza,2,18.0,1,1,2,3,0,0,3,1,1,1,1,2
+Florida,rsv,3,13.0,2,2,1,1,0,0,3,0,2,2,0,1
+Georgia,covid,6,22,5,5,2,2,5,5,3,0,5,5,2,1
+Georgia,influenza,3,20,2,2,1,3,1,1,2,1,2,2,0,3
+Georgia,rsv,3,19,0,0,1,6,2,2,1,1,0,0,0,3
+Hawaii,covid,3,10.0,3,3,5,1,3,3,3,1,2,2,4,2
+Hawaii,influenza,4,10.0,1,1,3,2,4,3,6,2,1,1,2,2
+Hawaii,rsv,2,10.0,2,2,1,1,2,2,4,4,2,2,0,0
+Idaho,covid,3,4.0,1,1,6,1,3,3,5,1,1,1,4,1
+Idaho,influenza,3,4.0,1,1,3,1,1,1,4,2,1,1,3,1
+Idaho,rsv,3,4.0,2,2,1,3,0,0,3,0,2,2,1,2
+Illinois,covid,4,73.0,4,4,3,0,4,4,2,0,4,4,2,0
+Illinois,influenza,3,73.0,2,2,0,2,2,2,1,1,2,2,0,2
+Illinois,rsv,3,73.0,0,0,0,4,2,2,1,0,0,0,0,2
+Indiana,covid,4,26.0,4,4,4,0,4,4,2,0,4,4,3,0
+Indiana,influenza,3,26.0,0,0,0,4,2,2,1,1,0,0,0,3
+Indiana,rsv,3,25.0,1,1,0,2,2,2,1,0,1,1,0,2
+Iowa,covid,5,12.0,4,4,4,1,5,5,1,0,4,4,2,1
+Iowa,influenza,3,12.0,2,2,1,2,2,2,2,1,2,2,0,2
+Iowa,rsv,3,12.0,2,2,1,3,0,0,3,0,2,2,1,1
+Kansas,covid,5,13.0,3,3,4,3,5,5,3,0,3,3,3,2
+Kansas,influenza,3,13.0,2,2,1,3,3,3,0,1,2,2,0,3
+Kansas,rsv,3,13.0,1,1,1,2,2,2,1,1,1,1,0,2
+Kentucky,covid,6,17.0,5,5,1,2,6,6,3,0,5,5,1,2
+Kentucky,influenza,3,17,1,1,1,2,0,0,3,2,1,1,0,1
+Kentucky,rsv,3,8.0,1,1,1,3,1,1,2,2,1,1,1,1
+Louisiana,covid,5,2,4,4,4,1,4,4,1,1,4,4,3,1
+Louisiana,influenza,3,2.0,1,1,3,2,1,1,3,1,1,1,3,2
+Louisiana,rsv,3,2.0,1,1,3,3,1,1,2,0,1,1,1,2
+Maine,covid,4,21.0,3,3,4,1,3,3,2,1,3,3,4,1
+Maine,influenza,3,14.5,1,1,0,2,1,1,2,2,1,1,0,2
+Maine,rsv,3,13.0,1,1,0,3,2,2,3,1,1,1,0,3
+Maryland,covid,4,10.0,2,2,6,2,4,4,4,0,2,2,5,2
+Maryland,influenza,3,10.0,2,2,1,1,1,1,4,1,2,2,1,1
+Maryland,rsv,3,10.0,1,1,0,2,2,2,1,0,1,1,0,3
+Massachusetts,covid,3,7.0,3,3,8,0,3,3,3,0,3,3,4,0
+Massachusetts,influenza,4,5,1,1,2,1,1,1,2,2,1,1,2,1
+Massachusetts,rsv,3,5.0,1,1,0,5,2,2,1,0,1,1,0,2
+Michigan,covid,4,40.5,2,2,5,0,4,4,2,0,3,3,3,0
+Michigan,influenza,3,16.5,2,2,5,3,1,1,3,2,2,2,1,2
+Michigan,rsv,3,24.0,2,2,4,4,2,2,1,0,2,2,0,4
+Minnesota,covid,3,28.5,3,3,3,0,2,2,3,1,3,3,1,0
+Minnesota,influenza,3,4.0,1,1,2,3,2,2,1,1,1,1,0,3
+Minnesota,rsv,2,4.0,2,2,2,1,1,1,2,0,2,2,0,0
+Mississippi,covid,5,3.0,4,4,4,0,5,5,3,1,4,4,1,1
+Mississippi,influenza,3,3.0,1,1,0,2,1,1,3,1,1,1,0,2
+Mississippi,rsv,3,3.0,0,0,1,3,3,3,0,0,0,0,1,1
+Missouri,covid,4,45.0,3,3,5,2,2,2,5,0,2,2,3,2
+Missouri,influenza,3,30,1,1,0,1,1,1,2,4,1,1,0,0
+Missouri,rsv,3,43.0,1,1,1,1,3,3,1,1,1,1,0,1
+Montana,covid,1,5.0,1,1,10,2,1,1,6,1,1,1,9,1
+Montana,influenza,3,5.0,0,0,0,2,2,2,2,1,0,0,0,1
+Montana,rsv,3,5,0,0,0,0,2,2,1,2,0,0,0,0
+Nebraska,covid,4,16.0,2,2,4,1,4,4,2,0,2,2,3,1
+Nebraska,influenza,2,16,0,0,1,2,2,2,2,2,0,0,1,3
+Nebraska,rsv,3,16,1,1,1,1,2,2,2,1,1,1,1,1
+Nevada,covid,5,4.5,2,2,5,1,4,4,3,1,1,1,5,2
+Nevada,influenza,3,2.0,2,2,3,2,2,2,0,2,2,2,2,1
+Nevada,rsv,3,2.0,1,1,1,2,3,3,0,1,1,1,1,1
+New Hampshire,covid,4,15.0,1,1,6,4,3,3,3,1,1,1,3,1
+New Hampshire,influenza,2,15.0,1,1,2,2,1,1,3,1,0,0,2,3
+New Hampshire,rsv,3,15.0,2,2,0,4,1,1,3,1,1,1,0,3
+New Jersey,covid,4,24.0,2,2,2,0,4,4,4,0,2,2,2,0
+New Jersey,influenza,4,24.0,2,2,0,2,4,4,0,1,2,2,0,2
+New Jersey,rsv,3,24.0,1,1,0,4,3,3,0,0,1,1,0,3
+New Mexico,covid,2,7.0,2,2,5,1,1,1,5,0,2,2,4,1
+New Mexico,influenza,3,2.0,2,2,0,0,2,2,1,2,2,2,0,1
+New Mexico,rsv,3,2.0,2,2,0,1,3,3,0,0,2,2,0,1
+New York,covid,2,145.0,1,1,6,0,2,2,7,0,1,1,5,0
+New York,influenza,4,16.0,0,0,0,2,4,4,0,1,0,0,0,2
+New York,rsv,3,16,0,0,0,3,2,2,1,0,0,0,0,2
+North Carolina,covid,5,35.0,3,3,5,1,4,4,4,0,3,3,5,0
+North Carolina,influenza,3,34.0,2,2,2,2,2,2,5,0,2,2,2,1
+North Carolina,rsv,3,34.0,1,1,2,3,1,1,2,0,1,1,1,1
+North Dakota,covid,2,2.0,0,0,1,0,1,1,5,2,0,0,1,0
+North Dakota,influenza,3,,0,0,0,0,2,2,1,1,0,0,0,0
+North Dakota,rsv,3,,0,0,0,0,2,2,2,1,0,0,0,0
+Ohio,covid,4,70.0,3,3,4,1,4,4,2,0,3,3,3,1
+Ohio,influenza,3,69.0,0,0,0,3,1,1,2,1,0,0,0,3
+Ohio,rsv,3,54.0,1,1,0,2,3,3,0,0,1,1,0,1
+Oklahoma,covid,3,13,1,1,6,3,3,3,5,1,1,1,5,3
+Oklahoma,influenza,3,15,0,0,0,0,3,3,1,0,0,0,0,0
+Oklahoma,rsv,3,6,0,0,0,1,3,3,0,0,0,0,0,1
+Oregon,covid,5,31.0,3,3,4,1,5,5,1,0,3,3,3,1
+Oregon,influenza,3,31,2,2,2,0,3,3,1,2,2,2,1,1
+Oregon,rsv,3,30,0,0,3,2,2,2,1,0,0,0,0,2
+Pennsylvania,covid,3,37.0,3,3,5,1,3,3,3,0,3,3,3,1
+Pennsylvania,influenza,3,28.0,2,2,0,2,2,2,1,2,2,2,0,1
+Pennsylvania,rsv,3,25.0,0,0,0,4,2,2,1,0,0,0,0,3
+Rhode Island,covid,3,11.0,3,3,5,2,3,3,4,0,3,3,4,0
+Rhode Island,influenza,4,11.0,0,0,0,1,4,4,2,1,0,0,0,1
+Rhode Island,rsv,2,11.0,0,0,0,0,1,1,2,2,0,0,0,0
+South Carolina,covid,5,19.0,3,3,6,2,4,4,3,0,4,4,4,2
+South Carolina,influenza,3,20,0,0,0,2,0,0,3,2,0,0,0,2
+South Carolina,rsv,3,18,0,0,0,1,1,1,3,0,0,0,0,1
+South Dakota,covid,4,2.0,3,3,4,2,2,2,4,0,3,3,2,1
+South Dakota,influenza,3,2.0,2,2,4,1,1,1,3,2,2,2,1,1
+South Dakota,rsv,3,2.0,1,1,1,2,1,1,4,2,2,2,1,2
+Tennessee,covid,5,2.0,1,1,6,2,4,4,5,1,2,2,4,1
+Tennessee,influenza,3,2.0,2,2,0,0,1,1,2,3,2,2,0,1
+Tennessee,rsv,3,2.0,0,0,3,2,3,3,0,0,0,0,1,2
+Texas,covid,5,57.0,2,2,4,2,5,5,2,0,2,2,3,2
+Texas,influenza,3,39.0,1,1,4,3,1,1,2,1,1,1,3,2
+Texas,rsv,3,39.0,0,0,1,3,1,1,2,1,1,1,1,2
+Utah,covid,3,33.0,3,3,6,2,2,2,4,1,3,3,4,2
+Utah,influenza,3,31.5,1,1,1,3,3,3,1,1,1,1,0,2
+Utah,rsv,3,31.5,1,1,2,0,2,2,2,0,1,1,0,0
+Vermont,covid,3,5.0,2,2,4,3,2,2,3,2,1,1,4,1
+Vermont,influenza,3,5.0,1,1,0,3,2,2,3,1,1,1,0,1
+Vermont,rsv,3,5.0,2,2,1,2,3,3,3,1,2,2,0,1
+Virginia,covid,4,34.0,4,4,4,0,4,4,4,0,4,4,3,0
+Virginia,influenza,3,25.0,1,1,1,3,2,2,1,1,1,1,1,3
+Virginia,rsv,3,15.0,0,0,3,3,3,3,1,0,0,0,1,1
+Washington,covid,5,27.0,4,4,5,1,4,4,1,2,4,4,4,1
+Washington,influenza,3,27,1,1,0,2,1,1,4,2,1,1,0,2
+Washington,rsv,3,19,1,1,0,2,1,1,2,1,1,1,0,2
+West Virginia,covid,5,22.0,4,4,4,4,5,5,2,0,3,3,3,2
+West Virginia,influenza,3,15,0,0,0,3,2,2,3,0,0,0,0,2
+West Virginia,rsv,2,13.0,0,0,0,2,2,2,1,2,0,0,0,2
+Wisconsin,covid,4,41.0,4,4,3,1,4,4,2,0,4,4,3,0
+Wisconsin,influenza,3,22.0,0,0,1,3,2,2,2,1,0,0,0,2
+Wisconsin,rsv,3,22.0,0,0,0,3,2,2,1,0,0,0,0,2
+Wyoming,covid,4,8.0,1,1,7,3,1,1,2,2,0,0,6,3
+Wyoming,influenza,3,5.0,1,1,0,0,1,1,4,1,1,1,0,0
+Wyoming,rsv,2,2.0,1,1,1,2,2,2,2,3,1,1,2,1

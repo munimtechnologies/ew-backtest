@@ -8,11 +8,16 @@ and the weeks each rule alerted. It also explains each source's newest week in w
 value against the trailing median, the two weeks before, the site count and the last alert. The rules
 and constants come from ew.backtest (PRIMARY, fixed in the pre-registration); nothing here is fitted.
 
+With --backtest (a graded results.json from ew.run) the page also shows how often each rule's alerts
+were right in the back-test, with the pre-registered reading for each pathogen. With --states (the
+same run's states.csv) each state's block also gives that state's own back-test record.
+
 Writes to --out-dir: index.html and status.csv (one row per state and pathogen).
 
 Usage:
   python -m ew.report --series out/series.csv --out-dir out/report
   python -m ew.report --fetch --out-dir out/report     (fetches CDC first and writes series.csv too)
+  python -m ew.report --fetch --backtest results.json --states states.csv --out-dir out/report
 """
 import argparse
 import csv
@@ -24,12 +29,13 @@ from datetime import datetime, timezone
 
 from ew import backtest as bt
 
-CODE_VERSION = "1.0"
+CODE_VERSION = "1.1"
 REPO_URL = "https://github.com/munimtechnologies/ew-backtest"
 PREREG_URL = REPO_URL + "/blob/main/prereg/ew-backtest-prereg-v1-2026-10-28.md"
 WEEKS_SHOWN = 104
 W, H, PAD = 640, 120, 4
 NAMES = {"covid": "COVID-19", "influenza": "Influenza", "rsv": "RSV"}
+RULES = (("ww", "Wastewater"), ("ed", "ED only"), ("both", "Both rising"))
 STATUS_HEAD = ["state", "pathogen", "ww_week", "ww_status", "ww_value", "ww_threshold", "ww_sites",
                "ww_last_alert", "ed_week", "ed_status", "ed_value", "ed_threshold", "ed_last_alert"]
 CSS = ("body{font-family:Arial,sans-serif;max-width:980px;margin:24px auto;padding:0 12px;color:#222}"
@@ -53,6 +59,14 @@ def fmt(v):
     return "n/a" if v is None else "%.2f" % v
 
 
+def pct(v):
+    return "n/a" if v is None else "%d%%" % round(100 * v)
+
+
+def lead(v):
+    return "n/a" if v is None else "%g" % v
+
+
 def read_series(path):
     """series.csv (ew.run.write_series) back to {(state, pathogen): {"weeks", "w", "n", "e"}} on one
     weekly grid from the first to the last week in the file. Missing weeks are None (sites 0)."""
@@ -74,6 +88,12 @@ def read_series(path):
         out[k]["n"][i] = int(r["wval_sites"] or 0)
         out[k]["e"][i] = num(r["ed_percent"])
     return out
+
+
+def read_states(path):
+    """states.csv (ew.run.write_states) to {(state, pathogen): row}, values kept as text."""
+    with open(path, newline="", encoding="utf-8") as f:
+        return {(r["state"], r["pathogen"]): r for r in csv.DictReader(f)}
 
 
 def explain(x, n=None, p=None):
@@ -122,6 +142,71 @@ def describe(ex, weeks, what):
     return "; ".join(bits) + "."
 
 
+def reading(grades, path):
+    """The pre-registered fixed reading for one pathogen, from its graded H1, H3 and H4."""
+    h1, h3, h4 = (grades.get("H%d_%s" % (i, path)) for i in (1, 3, 4))
+    if h1 == "fail":
+        return "Wastewater alerts were no better than chance, so no early-warning claim is made."
+    if h1 != "pass":
+        return "Not graded: too few alerts or surges."
+    if h3 == "fail":
+        return ("Wastewater alerts beat chance but did not come earlier than the ED-only rule: "
+                "confirmation, not lead.")
+    if h3 != "pass":
+        return "Wastewater alerts beat chance; whether they came earlier could not be tested."
+    if h4 == "pass":
+        return "Wastewater alerts came earlier than the ED-only rule, even with a one-week publication delay."
+    return ("Wastewater alerts came earlier than the ED-only rule only when the report runs after the "
+            "Friday wastewater release.")
+
+
+def backtest_section(res):
+    """HTML: how often each rule's alerts were right in a graded back-test (results.json of ew.run)."""
+    summ, grades = res.get("summary") or {}, res.get("grades") or {}
+    head = "<h2>How reliable have these alerts been?</h2>"
+    if not summ:
+        return head + "<p>No graded back-test results were given.</p>"
+    rows = ["<tr><th>Pathogen</th><th>Rule</th><th>ED surges caught</th><th>Alerts right (PPV)</th>"
+            "<th>PPV by chance</th><th>False alarms per state-year</th><th>Median lead (weeks)</th></tr>"]
+    notes = []
+    for path in [x for x in bt.PATHOGENS if x in summ]:
+        s = summ[path]
+        name = NAMES.get(path, path)
+        for key, label in RULES:
+            r = s.get(key)
+            if not r:
+                continue
+            rows.append("<tr><td>%s</td><td>%s</td><td>%d of %d (%s)</td><td>%s</td><td>%s</td><td>%s</td>"
+                        "<td>%s</td></tr>"
+                        % (esc(name), esc(label), r["detected"], r["events"], pct(r["sensitivity"]),
+                           pct(r["ppv"]), pct(r.get("null_ppv_mean")), fmt(r["false_per_52_weeks"]),
+                           lead(r["lead_median"])))
+        sent = reading(grades, path)
+        same = (s.get("paired") or {}).get("same_cycle")
+        if same:
+            sent += (" Of the surges both rules caught, wastewater alerted earlier in %d, the ED-only rule in "
+                     "%d, and both in the same week in %d." % (same["ww_earlier"], same["ed_earlier"], same["ties"]))
+        notes.append("<li><b>%s:</b> %s</li>" % (esc(name), esc(sent)))
+    fetched = ((res.get("timing") or {}).get("fetched_at_utc") or "n/a")[:10]
+    return (head + "<p>From the pre-registered back-test on data fetched %s, all states pooled. An ED surge "
+            "is the ED percent rising above its trailing 75th percentile for two weeks after four quiet weeks. "
+            "A surge is caught when an alert falls 0 to 4 weeks before its onset or in the onset week. An "
+            "alert is right when a surge onset follows within 4 weeks; alerts during a surge already under way "
+            "are left out of PPV. PPV by chance gives the same number of alerts random timing. Both rising "
+            "means the wastewater rule firing in a week when the ED percent also rose; it is descriptive and "
+            "was not graded. The ED-only rule shares its noise with the surge definition, which favours it on "
+            "PPV and works against it on lead.</p>" % esc(fetched)
+            + "<table>%s</table><ul>%s</ul>" % ("".join(rows), "".join(notes)))
+
+
+def track(r):
+    """One sentence: a state's back-test record for the wastewater and ED-only rules (a states.csv row)."""
+    return ("Back-test record in this state: the wastewater rule caught %s of %s ED surges (%s alerts right, "
+            "%s false alarms); the ED-only rule caught %s of %s (%s right, %s false)."
+            % (r["ww_detected"], r["events"], r["ww_true"], r["ww_false"],
+               r["ed_detected"], r["events"], r["ed_true"], r["ed_false"]))
+
+
 def points(vals, vmax, x0, dx):
     """Polyline point strings, one per run of known values, on a 0..vmax scale."""
     runs, cur = [], []
@@ -166,9 +251,11 @@ def status_row(k, s, ww, ed):
             wk[ed["t"]], ed["status"], fmt(ed["value"]), fmt(ed["threshold"]), last(ed)]
 
 
-def render(series, meta, weeks_shown=WEEKS_SHOWN, p=None):
-    """(HTML page, status rows) for every series, states in name order."""
+def render(series, meta, weeks_shown=WEEKS_SHOWN, p=None, backtest=None, states=None):
+    """(HTML page, status rows) for every series, states in name order. backtest: a results.json dict;
+    states: read_states() output. Either may be None, and the page then leaves that part out."""
     p = p or bt.PRIMARY
+    states = states or {}
     keys = sorted(series, key=lambda k: (k[0], bt.PATHOGENS.index(k[1]) if k[1] in bt.PATHOGENS else 9, k[1]))
     rows, blocks, tally = [], [], {}
     for k in keys:
@@ -188,10 +275,11 @@ def render(series, meta, weeks_shown=WEEKS_SHOWN, p=None):
         if ww["status"] == "rule firing":
             t["ww_states"].append(k[0])
         rows.append(status_row(k, s, ww, ed))
-        blocks.append('<h3 id="%s">%s: %s</h3>%s<p class="st ww">%s</p><p class="st ed">%s</p>'
+        rec = '<p class="st">%s</p>' % esc(track(states[k])) if k in states else ""
+        blocks.append('<h3 id="%s">%s: %s</h3>%s<p class="st ww">%s</p><p class="st ed">%s</p>%s'
                       % (esc(k[0] + "-" + k[1]), esc(k[0]), esc(name), chart,
                          esc(describe(ww, s["weeks"], "Wastewater (state median WVAL)")),
-                         esc(describe(ed, s["weeks"], "ED visits (percent, ED-only rule)"))))
+                         esc(describe(ed, s["weeks"], "ED visits (percent, ED-only rule)")), rec))
     summary = ["<tr><th>Pathogen</th><th>States</th><th>Wastewater rule firing</th><th>New this week</th>"
                "<th>ED-only rule firing</th><th>States with the wastewater rule firing</th></tr>"]
     for path in sorted(tally, key=lambda x: bt.PATHOGENS.index(x) if x in bt.PATHOGENS else 9):
@@ -224,9 +312,10 @@ def render(series, meta, weeks_shown=WEEKS_SHOWN, p=None):
         "advice, not a forecast for any person or place, and not a CDC product (no endorsement implied).</p>",
         "<p>By MV2 of Munim, Inc. (mv2@munimtech.com). Code and text were made by AI agents (Claude) working "
         "in MV2's name; no human has reviewed this page. Code Apache-2.0; text and tables CC BY 4.0.</p>",
-        "<h2>Newest week at a glance</h2><table>%s</table>" % "".join(summary),
-        "<h2>By state</h2>",
     ]
+    if backtest is not None:
+        page.append(backtest_section(backtest))
+    page += ["<h2>Newest week at a glance</h2><table>%s</table>" % "".join(summary), "<h2>By state</h2>"]
     page += blocks
     page.append("</body></html>")
     return "\n".join(page), rows
@@ -236,6 +325,8 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--series")
     ap.add_argument("--fetch", action="store_true")
+    ap.add_argument("--backtest", help="results.json of a graded ew.run back-test")
+    ap.add_argument("--states", help="states.csv of the same back-test")
     ap.add_argument("--out-dir", required=True)
     ap.add_argument("--weeks", type=int, default=WEEKS_SHOWN)
     a = ap.parse_args(argv)
@@ -243,6 +334,11 @@ def main(argv=None):
         ap.error("give --series or --fetch")
     os.makedirs(a.out_dir, exist_ok=True)
     meta = {"generated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}
+    backtest = None
+    if a.backtest:
+        with open(a.backtest, encoding="utf-8") as f:
+            backtest = json.load(f)
+    states = read_states(a.states) if a.states else None
     path = a.series
     if a.fetch:
         from ew import cdc
@@ -255,7 +351,7 @@ def main(argv=None):
             wmeta.get("max_date_updated", "n/a")[:10], emeta.get("max_buildnumber", "n/a"))
     # Always render from the file, so --fetch and --series give the same page for the same data.
     series = read_series(path)
-    page, rows = render(series, meta, a.weeks)
+    page, rows = render(series, meta, a.weeks, backtest=backtest, states=states)
     with open(os.path.join(a.out_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write(page)
     with open(os.path.join(a.out_dir, "status.csv"), "w", newline="", encoding="utf-8") as f:
@@ -268,7 +364,8 @@ def main(argv=None):
         firing[r[1]][0] += r[3] == "rule firing"
         firing[r[1]][1] += r[9] == "rule firing"
     print(json.dumps({"code_version": CODE_VERSION, "series": len(rows), "html_bytes": len(page.encode("utf-8")),
-                      "firing_ww_ed": firing}))
+                      "firing_ww_ed": firing, "backtest": backtest is not None,
+                      "state_records": sum(1 for r in rows if (r[0], r[1]) in (states or {}))}))
     return 0
 
 

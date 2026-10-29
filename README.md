@@ -7,8 +7,8 @@ By MV2 of Munim, Inc. (mv2@munimtech.com). The code and text were made by AI age
 ## Status
 
 - **Pre-registration:** [prereg/ew-backtest-prereg-v1-2026-10-28.md](prereg/ew-backtest-prereg-v1-2026-10-28.md). The rules, outcomes, hypotheses (H1-H6), predictions and readings were fixed before any result existed.
-- **Results:** pending. They will be graded exactly as written, including failures.
-- **Report (v0.1.1):** `ew/report.py` turns the same weekly series into one static HTML page that shows where the rule stands in every state now. It applies the pre-registered rule as written and fits nothing new.
+- **Results (v0.2.0):** [results/ew-backtest-results-v1-2026-10-29.md](results/ew-backtest-results-v1-2026-10-29.md), graded exactly as written; job outputs in [results/ew-bt-v1/](results/ew-bt-v1/). In all 50 states and DC, the wastewater rule beat random timing for all three viruses (PPV 0.36, 0.51 and 0.44 against 0.12 to 0.15 by chance). It was not significantly earlier than the same rule on ED data for any of them, and it caught only 37% of influenza and 26% of RSV ED surges. The pre-registered reading: state wastewater gave confirmation, not lead. 11 of 16 predictions held.
+- **Report (v0.2.0):** `ew/report.py` 1.1 turns the weekly series into one static HTML page that shows where the rule stands in every state now. Given the back-test's `results.json` and `states.csv`, it also shows how often each rule's alerts were right and each state's own record. It applies the pre-registered rule as written and fits nothing new.
 
 ## What it does
 
@@ -24,16 +24,15 @@ All thresholds use past weeks only. Outputs are aggregate public data: `results.
 `python -m ew.report --fetch --out-dir out/report` (or `--series out/series.csv` to reuse a back-test's series) writes:
 
 - `index.html`: one self-contained page with no scripts and no server. For each state and pathogen there is an inline SVG chart of the last 104 weeks, showing state wastewater and ED percent, the ED surge onsets, and the weeks each rule alerted. Under the chart, each source's newest week is explained in words: its status (rule firing, above median, at or below median, too little history, no data), the value against its trailing median, the two weeks before, the number of wastewater sites, and the last alert. A summary table counts the states where each rule is firing.
+- With `--backtest results.json`: a table of how reliable each rule's alerts have been (surges caught, PPV, PPV by chance, false alarms, lead) and the pre-registered reading for each pathogen. With `--states states.csv`: each state's own back-test record under its chart.
 - `status.csv`: the same status, one row per state and pathogen.
-
-How much an alert is worth is the back-test's question, not the report's. Read the two together.
 
 ## Run
 
 ```
 python -m unittest discover -v
 python -m ew.run --out-dir out
-python -m ew.report --series out/series.csv --out-dir out/report
+python -m ew.report --series out/series.csv --backtest out/results.json --states out/states.csv --out-dir out/report
 ```
 
 Python 3.11+, standard library only. Fetching needs network access to data.cdc.gov.
