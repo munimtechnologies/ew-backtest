@@ -8,8 +8,9 @@ By MV2 of Munim, Inc. (mv2@munimtech.com). The code and text were made by AI age
 
 - **Pre-registration:** [prereg/ew-backtest-prereg-v1-2026-10-28.md](prereg/ew-backtest-prereg-v1-2026-10-28.md). The rules, outcomes, hypotheses (H1-H6), predictions and readings were fixed before any result existed.
 - **Results (v0.2.0):** [results/ew-backtest-results-v1-2026-10-29.md](results/ew-backtest-results-v1-2026-10-29.md), graded exactly as written; job outputs in [results/ew-bt-v1/](results/ew-bt-v1/). In all 50 states and DC, the wastewater rule beat random timing for all three viruses (PPV 0.36, 0.51 and 0.44 against 0.12 to 0.15 by chance). It was not significantly earlier than the same rule on ED data for any of them, and it caught only 37% of influenza and 26% of RSV ED surges. The pre-registered reading: state wastewater gave confirmation, not lead. 11 of 16 predictions held.
-- **Report (v0.2.0):** `ew/report.py` 1.1 turns the weekly series into one static HTML page that shows where the rule stands in every state now. Given the back-test's `results.json` and `states.csv`, it also shows how often each rule's alerts were right and each state's own record. It applies the pre-registered rule as written and fits nothing new.
 - **Follow-up study (v0.3.0, pre-registered, results pending):** [prereg/ew-agg-prereg-v1-2026-10-29.md](prereg/ew-agg-prereg-v1-2026-10-29.md). Was v1's result a property of the state median? `ew/agg.py` runs the same rule on a population-weighted mean and on the upper quartile of the same site values, and tests whether either catches the ED surges the median missed or comes earlier than the ED-only rule.
+- **Site-file audit (v0.3.1, descriptive, not pre-registered):** [results/wval-site-file-audit-2026-10-29.md](results/wval-site-file-audit-2026-10-29.md). In CDC's WVAL site file, 58% of influenza A and RSV site-weeks are exactly 1.0, the site's own baseline (13% for COVID-19), and state medians sit at 1.0 in about 55% of influenza and RSV state-weeks. Some site values run to 10^9 (influenza A) and 10^21 (RSV), far beyond the "Very high" cut-offs. It was written before any result of the follow-up existed and does not change how it is graded.
+- **Report (v0.3.1):** `ew/report.py` 1.2 turns the weekly series into one static HTML page that shows where the rule stands in every state now. Given the back-test's `results.json` and `states.csv`, it also shows how often each rule's alerts were right and each state's own record. New in 1.2: a series whose newest week is more than 2 weeks older than the page's newest week is marked stale and not counted as firing (the 2026-10-29 page had shown North Dakota's COVID-19 wastewater, last reported in September 2023, as "above median"), and the limits explain the 1.0 baseline. It applies the pre-registered rule as written and fits nothing new.
 
 ## What it does
 
@@ -24,7 +25,7 @@ All thresholds use past weeks only. Outputs are aggregate public data: `results.
 
 `python -m ew.report --fetch --out-dir out/report` (or `--series out/series.csv` to reuse a back-test's series) writes:
 
-- `index.html`: one self-contained page with no scripts and no server. For each state and pathogen there is an inline SVG chart of the last 104 weeks, showing state wastewater and ED percent, the ED surge onsets, and the weeks each rule alerted. Under the chart, each source's newest week is explained in words: its status (rule firing, above median, at or below median, too little history, no data), the value against its trailing median, the two weeks before, the number of wastewater sites, and the last alert. A summary table counts the states where each rule is firing.
+- `index.html`: one self-contained page with no scripts and no server. For each state and pathogen there is an inline SVG chart of the last 104 weeks, showing state wastewater and ED percent, the ED surge onsets, and the weeks each rule alerted. Under the chart, each source's newest week is explained in words: its status (rule firing, above median, at or below median, too little history, stale, no data), the value against its trailing median, the two weeks before, the number of wastewater sites, and the last alert. A summary table counts the states where each rule is firing.
 - With `--backtest results.json`: a table of how reliable each rule's alerts have been (surges caught, PPV, PPV by chance, false alarms, lead) and the pre-registered reading for each pathogen. With `--states states.csv`: each state's own back-test record under its chart.
 - `status.csv`: the same status, one row per state and pathogen.
 
@@ -41,7 +42,7 @@ Python 3.11+, standard library only. Fetching needs network access to data.cdc.g
 
 ## Limits
 
-These are state medians over very different sewersheds. Both sources are revised, and the back-test uses the data as published on the fetch date. ED percent is a share of all visits. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
+These are state medians over very different sewersheds. For influenza A and RSV most sites sit at their baseline (WVAL 1.0) for much of the year, so a state median moves only once more than half of its sites rise (see the site-file audit). Both sources are revised, and the back-test uses the data as published on the fetch date. ED percent is a share of all visits. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
 
 ## Data and licence
 

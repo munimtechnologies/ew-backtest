@@ -219,7 +219,7 @@ class TestMain(unittest.TestCase):
                 page = f.read()
         printed = json.loads(buf.getvalue())
         self.assertEqual((printed["code_version"], printed["series"], printed["backtest"],
-                          printed["state_records"]), ("1.1", 2, True, 1))  # Gamma has no series
+                          printed["state_records"]), ("1.2", 2, True, 1))  # Gamma has no series
         self.assertIn(ROW_WW, page)
         self.assertLess(page.index("How reliable have these alerts been?"), page.index("Newest week at a glance"))
         # Alpha covid only; Beta & Co has no row in states.csv.

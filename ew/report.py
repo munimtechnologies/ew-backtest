@@ -8,6 +8,11 @@ and the weeks each rule alerted. It also explains each source's newest week in w
 value against the trailing median, the two weeks before, the site count and the last alert. The rules
 and constants come from ew.backtest (PRIMARY, fixed in the pre-registration); nothing here is fitted.
 
+A source whose newest week is more than STALE_WEEKS weeks older than the newest week in the file is
+marked "stale" (1.2): its last status is out of date, so it is neither counted as firing nor as a new
+alert. (In the 2026-10-29 page, North Dakota's COVID-19 wastewater series ended in September 2023 and
+was shown as "above median".)
+
 With --backtest (a graded results.json from ew.run) the page also shows how often each rule's alerts
 were right in the back-test, with the pre-registered reading for each pathogen. With --states (the
 same run's states.csv) each state's block also gives that state's own back-test record.
@@ -29,10 +34,12 @@ from datetime import datetime, timezone
 
 from ew import backtest as bt
 
-CODE_VERSION = "1.1"
+CODE_VERSION = "1.2"
 REPO_URL = "https://github.com/munimtechnologies/ew-backtest"
 PREREG_URL = REPO_URL + "/blob/main/prereg/ew-backtest-prereg-v1-2026-10-28.md"
+AUDIT_URL = REPO_URL + "/blob/main/results/wval-site-file-audit-2026-10-29.md"
 WEEKS_SHOWN = 104
+STALE_WEEKS = 2
 W, H, PAD = 640, 120, 4
 NAMES = {"covid": "COVID-19", "influenza": "Influenza", "rsv": "RSV"}
 RULES = (("ww", "Wastewater"), ("ed", "ED only"), ("both", "Both rising"))
@@ -100,17 +107,22 @@ def explain(x, n=None, p=None):
     """Why rule R(x, q) does or does not fire in the newest week with a value.
 
     status: "rule firing" (R holds), "above median" (above the trailing q-quantile but not rising two
-    weeks running), "at or below median", "too little history" (no threshold yet) or "no data"."""
+    weeks running), "at or below median", "too little history" (no threshold yet), "stale" (the newest
+    week with a value is more than STALE_WEEKS weeks before the last week of x) or "no data".
+    behind: how many weeks the newest value is before the last week of x."""
     p = p or bt.PRIMARY
     known = [i for i, v in enumerate(x) if v is not None]
     t = known[-1] if known else len(x) - 1
     flags = bt.rule_flags(x, p["q"], p["window"], p["min_hist"])
     alerts = bt.onsets(flags, p["refractory"])
     v = x[t] if known else None
+    behind = len(x) - 1 - t if known else 0
     th = bt.trailing_threshold(x, t, p["q"], p["window"], p["min_hist"]) if known else None
     prev = [x[t - 2] if t >= 2 else None, x[t - 1] if t >= 1 else None]
     if v is None:
         status = "no data"
+    elif behind > STALE_WEEKS:
+        status = "stale"
     elif th is None:
         status = "too little history"
     elif flags[t]:
@@ -120,15 +132,20 @@ def explain(x, n=None, p=None):
     else:
         status = "at or below median"
     past = [a for a in alerts if a <= t]
-    return {"t": t, "status": status, "value": v, "threshold": th, "prev": prev,
+    return {"t": t, "status": status, "value": v, "threshold": th, "prev": prev, "behind": behind,
             "rising": None if None in (v, prev[0], prev[1]) else v > prev[1] > prev[0],
-            "new_alert": bool(past) and past[-1] == t, "last_alert": past[-1] if past else None,
+            "new_alert": bool(past) and past[-1] == t and status != "stale",
+            "last_alert": past[-1] if past else None,
             "sites": n[t] if n is not None and known else None, "alerts": alerts}
 
 
 def describe(ex, weeks, what):
     """One sentence for a reader: the newest week's status and the numbers behind it."""
-    head = "%s, week ending %s: %s" % (what, weeks[ex["t"]], ex["status"])
+    if ex["status"] == "stale":
+        head = "%s, week ending %s: stale (nothing newer in the %d weeks since)" % (what, weeks[ex["t"]],
+                                                                                   ex["behind"])
+    else:
+        head = "%s, week ending %s: %s" % (what, weeks[ex["t"]], ex["status"])
     if ex["new_alert"]:
         head += " (new alert this week)"
     bits = [head]
@@ -307,9 +324,15 @@ def render(series, meta, weeks_shown=WEEKS_SHOWN, p=None, backtest=None, states=
         "<a href=\"%s\">ew-backtest repository</a>.</p>"
         % (esc(PREREG_URL), p["window"], p["refractory"], p["quiet"], esc(REPO_URL)),
         "<p><b>Limits.</b> State medians hide very different sewersheds, and few sites make a noisy median. "
+        "For influenza A and RSV, most sites report a WVAL of exactly 1.0, their own baseline, for much of "
+        "the year (58%% of site-weeks in CDC's site file on 2026-10-23), so a state median often stays at 1.0 "
+        "until more than half of a state's sites rise (<a href=\"%s\">site-file audit</a>). A source whose "
+        "newest week is more than %d weeks older than the newest week on this page is marked stale and is not "
+        "counted as firing. "
         "Both sources are revised after release and come out on different days. A firing rule is a signal to "
         "look closer, not a forecast. This is research information for public-health readers, not medical "
-        "advice, not a forecast for any person or place, and not a CDC product (no endorsement implied).</p>",
+        "advice, not a forecast for any person or place, and not a CDC product (no endorsement implied).</p>"
+        % (esc(AUDIT_URL), STALE_WEEKS),
         "<p>By MV2 of Munim, Inc. (mv2@munimtech.com). Code and text were made by AI agents (Claude) working "
         "in MV2's name; no human has reviewed this page. Code Apache-2.0; text and tables CC BY 4.0.</p>",
     ]
@@ -358,13 +381,16 @@ def main(argv=None):
         w = csv.writer(f)
         w.writerow(STATUS_HEAD)
         w.writerows(rows)
-    firing = {}
+    firing, stale = {}, {}
     for r in rows:
         firing.setdefault(r[1], [0, 0])
         firing[r[1]][0] += r[3] == "rule firing"
         firing[r[1]][1] += r[9] == "rule firing"
+        stale.setdefault(r[1], [0, 0])
+        stale[r[1]][0] += r[3] == "stale"
+        stale[r[1]][1] += r[9] == "stale"
     print(json.dumps({"code_version": CODE_VERSION, "series": len(rows), "html_bytes": len(page.encode("utf-8")),
-                      "firing_ww_ed": firing, "backtest": backtest is not None,
+                      "firing_ww_ed": firing, "stale_ww_ed": stale, "backtest": backtest is not None,
                       "state_records": sum(1 for r in rows if (r[0], r[1]) in (states or {}))}))
     return 0
 
