@@ -1,0 +1,154 @@
+state,pathogen,ww_week,ww_status,ww_value,ww_threshold,ww_sites,ww_last_alert,ed_week,ed_status,ed_value,ed_threshold,ed_last_alert
+Alabama,covid,2026-10-17,above median,3.45,3.41,5,2026-10-10,2026-10-17,above median,0.47,0.33,2026-08-08
+Alabama,influenza,2026-10-17,rule firing,4.45,1.00,5,2026-10-10,2026-10-17,rule firing,1.35,0.62,2026-09-05
+Alabama,rsv,2026-10-17,above median,4.27,1.00,5,2026-01-03,2026-10-17,rule firing,0.20,0.18,2026-10-03
+Alaska,covid,2026-10-17,at or below median,1.65,3.48,1,2026-09-12,2026-10-17,at or below median,0.24,0.30,2026-08-29
+Alaska,influenza,2026-10-17,above median,4.63,2.11,1,2026-08-22,2026-10-17,above median,1.65,0.98,2026-08-22
+Alaska,rsv,2026-10-17,at or below median,1.00,1.00,1,2026-06-06,2026-10-17,at or below median,0.01,0.09,2025-12-06
+Arizona,covid,2026-10-17,above median,5.46,2.30,3,2026-08-01,2026-10-17,rule firing,0.51,0.32,2026-10-17
+Arizona,influenza,2026-10-17,at or below median,1.00,1.00,3,2026-01-31,2026-10-17,rule firing,0.54,0.53,2026-10-17
+Arizona,rsv,2026-10-10,at or below median,1.00,1.00,9,2025-02-08,2026-10-17,at or below median,0.02,0.03,2025-12-20
+Arkansas,covid,2026-10-17,rule firing,6.41,3.19,1,2026-10-17,2026-10-17,rule firing,0.47,0.45,2026-10-10
+Arkansas,influenza,2026-10-17,above median,2.27,1.00,1,2026-02-14,2026-10-17,rule firing,0.60,0.30,2026-09-26
+Arkansas,rsv,2026-10-17,at or below median,1.00,1.00,1,2026-04-18,2026-10-17,at or below median,0.09,0.22,2026-02-21
+California,covid,2026-10-17,above median,8.67,2.17,55,2026-07-04,2026-10-17,above median,0.53,0.14,2026-07-18
+California,influenza,2026-10-17,above median,5.59,1.33,55,2026-09-19,2026-10-17,rule firing,1.35,0.42,2026-09-12
+California,rsv,2026-10-17,at or below median,1.00,1.00,55,2025-11-29,2026-10-17,at or below median,0.04,0.05,2025-12-20
+Colorado,covid,2026-10-17,above median,3.89,2.32,23,2026-09-05,2026-10-17,above median,0.27,0.25,2025-11-29
+Colorado,influenza,2026-10-17,at or below median,1.00,1.00,22,2025-12-27,2026-10-17,rule firing,0.64,0.51,2026-10-10
+Colorado,rsv,2026-10-17,at or below median,1.00,1.00,23,2025-02-22,2026-10-17,at or below median,0.02,0.06,2025-11-22
+Connecticut,covid,2026-10-17,above median,9.89,4.42,10,2026-09-26,2026-10-17,above median,0.52,0.44,2026-09-12
+Connecticut,influenza,2026-10-17,at or below median,1.00,1.00,10,2025-12-06,2026-10-17,rule firing,0.46,0.30,2026-10-03
+Connecticut,rsv,2026-10-17,at or below median,1.00,1.00,10,2026-01-17,2026-10-17,at or below median,0.02,0.03,2026-02-21
+Delaware,covid,2026-10-17,above median,7.18,3.19,9,2026-08-29,2026-10-10,rule firing,0.60,0.33,2026-09-12
+Delaware,influenza,2026-10-17,at or below median,1.00,1.00,9,2025-12-20,2026-10-10,rule firing,0.43,0.18,2026-09-26
+Delaware,rsv,2026-10-17,at or below median,1.26,1.52,9,2026-04-04,2026-10-10,at or below median,0.07,0.12,2025-11-08
+District of Columbia,covid,2026-09-12,stale,3.01,1.75,1,2026-08-22,2026-10-17,above median,0.35,0.19,2026-09-19
+District of Columbia,influenza,2026-09-12,stale,1.00,1.00,1,2025-12-13,2026-10-17,rule firing,0.45,0.23,2026-10-10
+District of Columbia,rsv,2026-09-12,stale,1.00,1.00,1,2026-03-28,2026-10-17,at or below median,0.01,0.08,2026-01-03
+Florida,covid,2026-10-17,above median,13.46,3.37,10,2026-08-08,2026-10-17,above median,0.70,0.29,2026-07-04
+Florida,influenza,2026-10-17,rule firing,7.71,1.00,10,2026-09-26,2026-10-17,rule firing,2.29,0.71,2026-09-19
+Florida,rsv,2026-10-17,above median,5.44,2.81,10,2026-10-03,2026-10-17,rule firing,0.34,0.20,2026-10-03
+Georgia,covid,2026-10-17,at or below median,2.99,3.28,5,2026-08-01,2026-10-10,above median,0.43,0.25,2026-08-01
+Georgia,influenza,2026-10-17,above median,4.07,1.00,5,2026-01-31,2026-10-10,rule firing,0.55,0.26,2026-09-19
+Georgia,rsv,2026-10-17,at or below median,1.00,1.00,5,2025-12-27,2026-10-10,at or below median,0.09,0.13,2025-11-29
+Hawaii,covid,2026-10-17,rule firing,11.40,1.66,4,2026-10-17,2026-10-17,above median,1.16,0.20,2026-08-08
+Hawaii,influenza,2026-10-17,rule firing,37.04,1.00,4,2026-10-10,2026-10-17,rule firing,5.88,2.04,2026-09-26
+Hawaii,rsv,2026-10-17,above median,2.74,2.08,4,2026-03-14,2026-10-17,at or below median,0.24,0.26,2026-09-12
+Idaho,covid,2026-10-17,rule firing,7.09,2.17,3,2026-09-12,2026-10-17,above median,0.58,0.41,2026-02-14
+Idaho,influenza,2026-10-17,rule firing,4.80,1.60,3,2026-10-10,2026-10-17,rule firing,0.68,0.39,2026-09-26
+Idaho,rsv,2026-10-17,at or below median,1.00,1.00,3,2026-01-31,2026-10-17,at or below median,0.01,0.06,2025-12-06
+Illinois,covid,2026-10-17,above median,3.60,2.83,61,2025-11-22,2026-10-17,at or below median,0.20,0.23,2025-11-29
+Illinois,influenza,2026-10-17,at or below median,1.00,1.00,61,2025-12-20,2026-10-17,above median,0.37,0.27,2026-09-19
+Illinois,rsv,2026-10-17,at or below median,1.00,1.00,61,2026-01-31,2026-10-17,at or below median,0.03,0.07,2025-11-08
+Indiana,covid,2026-10-17,rule firing,2.54,2.28,26,2026-10-17,2026-10-17,rule firing,0.27,0.22,2026-10-10
+Indiana,influenza,2026-10-17,at or below median,1.00,1.00,26,2026-01-31,2026-10-17,rule firing,0.46,0.21,2026-09-26
+Indiana,rsv,2026-10-17,at or below median,1.00,1.00,25,2025-02-08,2026-10-17,at or below median,0.04,0.07,2025-11-01
+Iowa,covid,2026-10-17,rule firing,2.37,2.03,11,2026-10-17,2026-06-27,stale,0.00,0.45,2025-12-06
+Iowa,influenza,2026-10-17,at or below median,1.00,1.00,11,2025-12-27,2026-06-27,stale,0.00,0.09,2025-11-22
+Iowa,rsv,2026-10-17,at or below median,1.00,1.00,11,2026-03-07,2026-06-27,stale,0.00,0.04,2025-11-29
+Kansas,covid,2026-10-17,at or below median,3.54,3.86,6,2026-09-19,2026-10-17,above median,0.23,0.21,2025-12-06
+Kansas,influenza,2026-10-17,above median,1.44,1.00,6,2026-10-03,2026-10-17,above median,0.26,0.15,2026-09-26
+Kansas,rsv,2026-10-17,at or below median,1.00,1.00,6,2026-05-16,2026-10-17,at or below median,0.00,0.05,2025-11-22
+Kentucky,covid,2026-10-17,above median,3.96,2.56,18,2026-08-01,2026-10-17,above median,0.37,0.36,2026-10-10
+Kentucky,influenza,2026-10-17,at or below median,1.00,1.00,18,2026-07-11,2026-10-17,rule firing,0.77,0.21,2026-09-26
+Kentucky,rsv,2026-10-17,above median,2.79,1.00,14,2026-10-10,2026-10-17,at or below median,0.09,0.13,2026-03-14
+Louisiana,covid,2026-10-17,at or below median,2.73,2.77,2,2026-08-29,2026-10-17,above median,0.58,0.35,2026-07-18
+Louisiana,influenza,2026-10-17,above median,5.13,1.66,2,2026-09-05,2026-10-17,rule firing,1.61,0.57,2026-09-19
+Louisiana,rsv,2026-10-17,at or below median,1.00,2.23,2,2026-05-09,2026-10-17,rule firing,0.12,0.10,2026-10-17
+Maine,covid,2026-10-17,above median,3.12,2.10,13,2026-09-12,2026-10-17,at or below median,0.23,0.24,2026-09-26
+Maine,influenza,2026-10-17,at or below median,1.00,1.00,13,2025-12-27,2026-10-17,rule firing,0.58,0.28,2026-09-19
+Maine,rsv,2026-10-17,at or below median,1.00,1.00,5,2026-04-04,2026-10-17,at or below median,0.03,0.05,2026-01-31
+Maryland,covid,2026-10-17,rule firing,7.82,2.12,2,2026-09-19,2026-10-17,rule firing,0.45,0.29,2026-09-12
+Maryland,influenza,2026-10-17,at or below median,1.00,1.00,2,2026-02-14,2026-10-17,rule firing,0.53,0.29,2026-10-03
+Maryland,rsv,2026-10-17,at or below median,1.00,1.00,2,2025-12-06,2026-10-17,at or below median,0.02,0.08,2025-11-08
+Massachusetts,covid,2026-10-17,above median,5.43,3.03,5,2026-09-12,2026-10-17,above median,0.41,0.37,2026-09-26
+Massachusetts,influenza,2026-10-17,above median,3.36,1.00,5,2025-11-08,2026-10-17,rule firing,0.45,0.28,2026-09-26
+Massachusetts,rsv,2026-10-17,at or below median,1.00,1.42,5,2026-04-11,2026-10-17,at or below median,0.04,0.10,2025-11-01
+Michigan,covid,2026-10-17,at or below median,1.94,2.17,29,2026-09-26,2026-10-17,at or below median,0.16,0.18,2025-11-29
+Michigan,influenza,2026-10-17,above median,2.28,1.68,22,2026-08-15,2026-10-17,rule firing,0.27,0.17,2026-09-05
+Michigan,rsv,2026-10-17,at or below median,1.18,1.87,22,2026-08-22,2026-10-17,at or below median,0.02,0.05,2025-11-22
+Minnesota,covid,2026-10-17,above median,1.87,1.00,25,2026-09-19,2026-10-17,at or below median,0.21,0.29,2026-02-14
+Minnesota,influenza,2026-10-17,at or below median,1.00,1.00,23,2025-12-20,2026-10-17,rule firing,0.33,0.31,2026-09-26
+Minnesota,rsv,2026-10-17,at or below median,1.00,1.00,22,2025-06-07,2026-10-17,at or below median,0.02,0.11,2025-11-29
+Mississippi,covid,2026-10-17,above median,6.31,5.06,3,2026-08-15,2026-10-17,at or below median,0.45,0.50,2026-08-15
+Mississippi,influenza,2026-10-17,rule firing,1.82,1.00,2,2026-09-19,2026-10-17,rule firing,0.74,0.52,2026-09-19
+Mississippi,rsv,2026-10-17,above median,1.52,1.00,2,2026-01-31,2026-10-17,above median,0.15,0.11,2025-11-15
+Missouri,covid,2026-10-17,rule firing,5.39,2.69,24,2026-09-26,2026-10-17,rule firing,0.33,0.28,2026-10-17
+Missouri,influenza,2026-10-17,at or below median,1.00,1.00,24,2026-01-31,2026-10-17,above median,0.29,0.19,2026-09-12
+Missouri,rsv,2026-10-17,at or below median,1.00,1.00,24,2026-04-11,2026-10-17,at or below median,0.03,0.07,2025-11-15
+Montana,covid,2026-10-17,rule firing,12.98,2.19,2,2026-08-15,2026-10-17,at or below median,0.32,0.33,2026-10-10
+Montana,influenza,2026-06-27,stale,1.00,1.00,5,2026-03-21,2026-10-17,above median,0.53,0.29,2026-09-19
+Montana,rsv,2026-06-27,stale,1.00,1.00,5,,2026-10-17,at or below median,0.01,0.06,2026-01-31
+Nebraska,covid,2026-10-17,rule firing,2.60,2.13,16,2026-09-26,2026-10-17,above median,0.14,0.13,2026-09-19
+Nebraska,influenza,2026-10-17,at or below median,1.00,1.00,16,2025-12-20,2026-10-17,rule firing,0.38,0.12,2026-09-26
+Nebraska,rsv,2026-10-17,at or below median,1.00,1.00,16,2026-03-07,2026-10-17,above median,0.05,0.03,2026-02-07
+Nevada,covid,2026-10-17,above median,9.45,2.39,2,2026-07-18,2026-10-17,above median,0.52,0.23,2026-08-01
+Nevada,influenza,2026-10-17,rule firing,9.34,1.00,2,2026-10-10,2026-10-17,rule firing,0.93,0.65,2026-10-03
+Nevada,rsv,2026-10-17,at or below median,1.00,1.00,2,2026-01-10,2026-10-17,at or below median,0.03,0.05,2025-12-20
+New Hampshire,covid,2026-10-17,at or below median,1.61,3.17,1,2026-09-05,2026-10-17,above median,0.39,0.35,2026-09-19
+New Hampshire,influenza,2026-10-17,rule firing,2.76,1.74,1,2026-09-26,2026-10-17,rule firing,0.50,0.29,2026-10-03
+New Hampshire,rsv,2026-10-17,at or below median,1.00,1.98,1,2026-04-04,2026-10-17,at or below median,0.03,0.06,2025-11-22
+New Jersey,covid,2026-10-17,above median,4.17,3.98,24,2026-08-29,2026-10-17,above median,0.39,0.37,2026-09-05
+New Jersey,influenza,2026-10-17,at or below median,1.00,1.00,24,2025-12-06,2026-10-17,rule firing,0.61,0.36,2026-09-26
+New Jersey,rsv,2026-10-17,at or below median,1.00,1.00,24,2026-02-28,2026-10-17,at or below median,0.07,0.09,2025-11-01
+New Mexico,covid,2026-10-17,above median,7.80,2.46,4,2026-07-18,2026-10-17,rule firing,0.41,0.34,2026-10-10
+New Mexico,influenza,2026-09-12,stale,1.00,1.00,2,2025-11-29,2026-10-17,rule firing,0.50,0.35,2026-10-17
+New Mexico,rsv,2026-09-12,stale,1.00,1.00,2,2026-01-10,2026-10-17,at or below median,0.04,0.04,2025-12-27
+New York,covid,2026-10-17,at or below median,1.00,1.00,85,2026-02-14,2026-10-17,above median,0.36,0.32,2026-08-29
+New York,influenza,2026-10-17,at or below median,1.00,1.00,25,2025-12-20,2026-10-17,rule firing,0.45,0.28,2026-10-03
+New York,rsv,2026-10-17,at or below median,1.00,1.00,25,2026-02-14,2026-10-17,at or below median,0.03,0.06,2025-11-01
+North Carolina,covid,2026-10-17,above median,6.23,2.98,29,2026-08-15,2026-10-17,above median,0.68,0.45,2026-08-22
+North Carolina,influenza,2026-10-17,at or below median,1.00,1.00,29,2025-11-29,2026-10-17,rule firing,1.28,0.84,2026-09-12
+North Carolina,rsv,2026-10-17,at or below median,1.00,1.00,29,2026-02-14,2026-10-17,at or below median,0.06,0.13,2025-11-08
+North Dakota,covid,2023-09-16,stale,11.76,3.83,1,2023-07-22,2026-10-17,at or below median,0.09,0.14,2026-01-31
+North Dakota,influenza,2026-10-17,no data,n/a,n/a,,,2026-10-17,at or below median,0.23,0.27,2026-03-14
+North Dakota,rsv,2026-10-17,no data,n/a,n/a,,,2026-10-17,at or below median,0.00,0.07,2026-05-23
+Ohio,covid,2026-10-17,at or below median,1.00,1.00,57,2025-11-29,2026-10-17,above median,0.21,0.20,2025-11-22
+Ohio,influenza,2026-10-17,at or below median,1.00,1.00,57,2025-01-18,2026-10-17,rule firing,0.31,0.15,2026-09-26
+Ohio,rsv,2026-10-17,at or below median,1.00,1.00,54,2024-02-17,2026-10-17,at or below median,0.02,0.05,2025-12-06
+Oklahoma,covid,2026-10-10,at or below median,1.00,1.32,7,2026-08-15,2026-10-17,above median,0.35,0.23,2026-08-29
+Oklahoma,influenza,2026-09-12,stale,1.00,1.00,1,,2026-10-17,rule firing,0.64,0.19,2026-09-19
+Oklahoma,rsv,2026-10-10,at or below median,1.00,1.00,2,2023-12-16,2026-10-17,at or below median,0.05,0.06,2025-11-29
+Oregon,covid,2026-10-10,above median,9.61,1.98,19,2026-09-19,2026-10-17,above median,0.88,0.19,2026-08-08
+Oregon,influenza,2026-10-10,above median,1.63,1.00,19,2026-09-12,2026-10-17,above median,0.91,0.38,2026-09-19
+Oregon,rsv,2026-10-10,at or below median,1.00,1.00,19,2026-01-31,2026-10-17,at or below median,0.02,0.05,2025-11-22
+Pennsylvania,covid,2026-10-17,at or below median,2.42,2.62,21,2026-09-12,2026-10-17,at or below median,0.23,0.24,2025-11-29
+Pennsylvania,influenza,2026-10-17,at or below median,1.00,1.00,21,2026-02-07,2026-10-17,rule firing,0.33,0.19,2026-09-26
+Pennsylvania,rsv,2026-10-17,at or below median,1.00,1.00,20,2026-02-14,2026-10-17,at or below median,0.02,0.05,2025-11-15
+Rhode Island,covid,2026-10-17,rule firing,7.31,2.55,9,2026-08-22,2026-10-17,above median,0.53,0.29,2026-09-12
+Rhode Island,influenza,2026-10-17,at or below median,1.00,1.00,9,2025-12-13,2026-10-17,rule firing,0.38,0.23,2026-10-17
+Rhode Island,rsv,2026-10-17,at or below median,1.00,1.00,9,,2026-10-17,at or below median,0.00,0.07,2026-01-03
+South Carolina,covid,2026-10-17,above median,6.92,1.96,23,2026-10-10,2026-10-17,above median,0.58,0.38,2026-08-15
+South Carolina,influenza,2026-10-17,at or below median,1.00,1.00,23,2025-12-20,2026-10-17,rule firing,0.58,0.26,2026-09-19
+South Carolina,rsv,2026-10-17,at or below median,1.00,1.00,23,2024-12-14,2026-10-17,at or below median,0.08,0.09,2025-10-11
+South Dakota,covid,2026-10-17,above median,8.58,2.29,3,2026-01-31,2026-10-17,at or below median,0.17,0.24,2025-11-22
+South Dakota,influenza,2026-10-17,above median,10.05,1.41,3,2025-12-20,2026-10-17,above median,0.20,0.19,2026-09-26
+South Dakota,rsv,2026-10-17,above median,12.03,2.41,3,2026-01-17,2026-10-17,at or below median,0.00,0.05,2026-04-25
+Tennessee,covid,2026-10-17,rule firing,9.95,7.80,2,2026-10-10,2026-10-17,above median,0.52,0.43,2026-10-10
+Tennessee,influenza,2026-10-17,above median,2.23,1.30,2,2026-10-10,2026-10-17,rule firing,0.72,0.33,2026-09-26
+Tennessee,rsv,2026-10-17,at or below median,1.00,1.47,2,2026-07-11,2026-10-17,at or below median,0.08,0.11,2025-11-29
+Texas,covid,2026-10-17,above median,6.04,2.50,33,2026-08-22,2026-10-17,above median,0.54,0.32,2026-07-18
+Texas,influenza,2026-10-17,above median,7.15,1.23,33,2026-08-22,2026-10-17,rule firing,1.50,0.54,2026-09-19
+Texas,rsv,2026-10-17,above median,5.04,1.59,33,2025-12-13,2026-10-17,rule firing,0.14,0.12,2026-10-17
+Utah,covid,2026-10-17,above median,6.29,2.53,33,2026-08-29,2026-10-17,above median,0.47,0.24,2026-09-12
+Utah,influenza,2026-10-17,at or below median,1.00,1.00,33,2025-12-13,2026-10-17,rule firing,0.90,0.34,2026-09-12
+Utah,rsv,2026-10-17,at or below median,1.00,1.00,33,2024-05-25,2026-10-17,at or below median,0.02,0.04,2026-05-30
+Vermont,covid,2026-10-17,above median,3.65,2.77,10,2026-09-26,2026-10-17,above median,0.38,0.21,2026-10-03
+Vermont,influenza,2026-10-17,above median,2.10,1.00,10,2025-12-13,2026-10-17,rule firing,0.61,0.18,2026-10-17
+Vermont,rsv,2026-10-17,at or below median,1.00,1.00,10,2026-01-03,2026-10-17,at or below median,0.02,0.04,2026-06-20
+Virginia,covid,2026-10-17,above median,7.10,1.00,28,2026-08-29,2026-10-17,above median,0.54,0.36,2026-08-29
+Virginia,influenza,2026-10-17,at or below median,1.00,1.00,7,2025-12-20,2026-10-17,rule firing,0.66,0.32,2026-09-26
+Virginia,rsv,2026-10-17,at or below median,1.00,1.00,8,2026-01-10,2026-10-17,at or below median,0.05,0.12,2025-11-22
+Washington,covid,2026-10-17,above median,15.92,2.58,25,2026-08-08,2026-10-17,above median,0.87,0.23,2026-08-08
+Washington,influenza,2026-10-17,at or below median,1.00,1.00,25,2026-01-31,2026-10-17,rule firing,1.70,0.82,2026-09-12
+Washington,rsv,2026-10-17,at or below median,1.00,1.00,23,2026-01-31,2026-10-17,at or below median,0.05,0.10,2025-11-15
+West Virginia,covid,2026-10-17,at or below median,1.00,1.75,9,2026-09-05,2026-10-17,rule firing,0.44,0.37,2026-09-26
+West Virginia,influenza,2026-10-17,at or below median,1.00,1.00,9,2026-01-10,2026-10-17,above median,0.28,0.23,2026-09-26
+West Virginia,rsv,2026-10-17,at or below median,1.00,1.00,9,2025-03-01,2026-10-17,at or below median,0.07,0.23,2026-02-21
+Wisconsin,covid,2026-10-17,above median,3.21,1.00,3,2026-09-12,2026-10-17,at or below median,0.14,0.18,2026-10-03
+Wisconsin,influenza,2026-10-17,above median,1.66,1.00,3,2026-09-12,2026-10-17,rule firing,0.24,0.21,2026-09-05
+Wisconsin,rsv,2026-10-17,above median,1.04,1.00,3,2025-01-11,2026-10-17,at or below median,0.02,0.05,2025-11-08
+Wyoming,covid,2026-10-17,above median,3.13,2.79,1,2026-09-12,2026-10-17,above median,0.82,0.54,2026-10-03
+Wyoming,influenza,2026-10-10,at or below median,1.00,1.00,2,2024-12-21,2026-10-17,above median,0.78,0.77,2026-09-26
+Wyoming,rsv,2026-09-05,stale,1.00,1.25,1,2026-01-03,2026-10-17,at or below median,0.02,0.08,2026-01-31
