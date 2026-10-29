@@ -10,8 +10,9 @@ By MV2 of Munim, Inc. (mv2@munimtech.com). The code and text were made by AI age
 - **Results (v0.2.0):** [results/ew-backtest-results-v1-2026-10-29.md](results/ew-backtest-results-v1-2026-10-29.md), graded exactly as written; job outputs in [results/ew-bt-v1/](results/ew-bt-v1/). In all 50 states and DC, the wastewater rule beat random timing for all three viruses (PPV 0.36, 0.51 and 0.44 against 0.12 to 0.15 by chance). It was not significantly earlier than the same rule on ED data for any of them, and it caught only 37% of influenza and 26% of RSV ED surges. The pre-registered reading: state wastewater gave confirmation, not lead. 11 of 16 predictions held.
 - **Site-file audit (v0.3.1, descriptive, not pre-registered):** [results/wval-site-file-audit-2026-10-29.md](results/wval-site-file-audit-2026-10-29.md). In CDC's WVAL site file, 58% of influenza A and RSV site-weeks are exactly 1.0, the site's own baseline (13% for COVID-19), and state medians sit at 1.0 in about 55% of influenza and RSV state-weeks. Some site values run to 10^9 (influenza A) and 10^21 (RSV).
 - **Study v2 results (v0.4.0):** [results/ew-agg-results-v1-2026-10-29.md](results/ew-agg-results-v1-2026-10-29.md), graded exactly as pre-registered in [prereg/ew-agg-prereg-v1-2026-10-29.md](prereg/ew-agg-prereg-v1-2026-10-29.md); output in [results/ew-agg-v1/](results/ew-agg-v1/). A population-weighted mean of site values catches far more influenza and RSV ED surges than the median (sensitivity 58% vs 37% and 51% vs 26%), but with about three times the false alarms. The upper quartile gains less (47% and 35%) at about the same precision. No aggregate warns earlier than the ED-only rule. 11 of 13 predictions held.
-- **Study v3 (v0.4.1, pre-registered, results pending):** [prereg/ew-agg2-prereg-v1-2026-10-29.md](prereg/ew-agg2-prereg-v1-2026-10-29.md). Can an aggregate that single extreme sites cannot dominate keep the extra surges without the extra false alarms? `ew/agg2.py` tests a population-weighted geometric mean (the mean number of standard deviations above baseline) and the share of the population whose site is above baseline.
-- **Report:** `ew/report.py` 1.2 turns the weekly series into one static HTML page that shows where the rule stands in every state now, how often each rule's alerts were right, and each state's own record. Series more than 2 weeks behind are marked stale and not counted as firing. Dated snapshots: [report/2026-10-29/](report/2026-10-29/) (v0.4.0).
+- **Study v3 results (v0.4.2):** [results/ew-agg2-results-v1-2026-10-29.md](results/ew-agg2-results-v1-2026-10-29.md), graded exactly as pre-registered in [prereg/ew-agg2-prereg-v1-2026-10-29.md](prereg/ew-agg2-prereg-v1-2026-10-29.md); output in [results/ew-agg2-v1/](results/ew-agg2-v1/). Neither outlier-resistant aggregate keeps the extra surges without the extra false alarms (all six K2 tests fail). A population-weighted geometric mean behaves almost exactly like the raw population-weighted mean (influenza 91 surges caught by each, at 3.05 against 3.35 times the median's false alarms), so extreme single sites were not what drove study v2's result. No aggregate warns earlier than the ED-only rule. 18 of 19 predictions held.
+- **Prospective season check (v0.5.0, pre-registered, recording):** [prereg/ew-season-prereg-v1-2026-10-29.md](prereg/ew-season-prereg-v1-2026-10-29.md). The 2026-27 season will be scored on the alerts each rule showed on the data as published each week, not on revised data. `ew/watch.py` records them; the weekly records go in `watch/<date>/`.
+- **Report:** `ew/report.py` 1.2 turns the weekly series into one static HTML page that shows where the rule stands in every state now, how often each rule's alerts were right, and each state's own record. Series more than 2 weeks behind are marked stale and not counted as firing. Dated snapshots: [report/2026-10-29/](report/2026-10-29/) (v0.4.0). The report keeps the state median: three retrospective studies found no aggregate that catches more surges at the same false-alarm cost, except possibly the upper quartile, which awaits the prospective season.
 
 ## What it does
 
@@ -30,6 +31,14 @@ All thresholds use past weeks only. Outputs are aggregate public data: `results.
 - With `--backtest results.json`: a table of how reliable each rule's alerts have been (surges caught, PPV, PPV by chance, false alarms, lead) and the pre-registered reading for each pathogen. With `--states states.csv`: each state's own back-test record under its chart.
 - `status.csv`: the same status, one row per state and pathogen.
 
+## The weekly watch record
+
+`python -m ew.watch --out-dir out/watch` writes what the rule shows today on the state median, upper quartile (q75), population-weighted mean and population-weighted geometric mean of site WVAL, and on ED data alone:
+
+- `watch.csv`: per state, pathogen and source, the newest week, its status, value, threshold, sites, whether it is a new alert, and the last alert;
+- `alerts.csv` and `recent.csv`: every alert and every value in the last 12 weeks, so later revisions can be counted;
+- `watch.json`: data versions, the gate and counts.
+
 ## Run
 
 ```
@@ -38,13 +47,14 @@ python -m ew.run --out-dir out
 python -m ew.report --series out/series.csv --backtest out/results.json --states out/states.csv --out-dir out/report
 python -m ew.agg --out-dir out/agg
 python -m ew.agg2 --out-dir out/agg2
+python -m ew.watch --out-dir out/watch
 ```
 
 Python 3.11+, standard library only. Fetching needs network access to data.cdc.gov.
 
 ## Limits
 
-These are state aggregates over very different sewersheds. For influenza A and RSV most sites sit at their baseline (WVAL 1.0) for much of the year, so a state median moves only once more than half of its sites rise (see the site-file audit). Both sources are revised, and the back-test uses the data as published on the fetch date. ED percent is a share of all visits. Studies v2 and v3 were designed after v1's result on the same history, so a prospective season is the real test. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
+These are state aggregates over very different sewersheds. For influenza A and RSV most sites sit at their baseline (WVAL 1.0) for much of the year, so a state median moves only once more than half of its sites rise (see the site-file audit). Both sources are revised, and the back-tests use the data as published on the fetch date. ED percent is a share of all visits. Studies v2 and v3 were designed after v1's result on the same history, so the prospective season is the real test. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
 
 ## Data and licence
 
