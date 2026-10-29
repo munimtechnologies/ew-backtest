@@ -8,9 +8,10 @@ By MV2 of Munim, Inc. (mv2@munimtech.com). The code and text were made by AI age
 
 - **Pre-registration:** [prereg/ew-backtest-prereg-v1-2026-10-28.md](prereg/ew-backtest-prereg-v1-2026-10-28.md). The rules, outcomes, hypotheses (H1-H6), predictions and readings were fixed before any result existed.
 - **Results (v0.2.0):** [results/ew-backtest-results-v1-2026-10-29.md](results/ew-backtest-results-v1-2026-10-29.md), graded exactly as written; job outputs in [results/ew-bt-v1/](results/ew-bt-v1/). In all 50 states and DC, the wastewater rule beat random timing for all three viruses (PPV 0.36, 0.51 and 0.44 against 0.12 to 0.15 by chance). It was not significantly earlier than the same rule on ED data for any of them, and it caught only 37% of influenza and 26% of RSV ED surges. The pre-registered reading: state wastewater gave confirmation, not lead. 11 of 16 predictions held.
-- **Follow-up study (v0.3.0, pre-registered, results pending):** [prereg/ew-agg-prereg-v1-2026-10-29.md](prereg/ew-agg-prereg-v1-2026-10-29.md). Was v1's result a property of the state median? `ew/agg.py` runs the same rule on a population-weighted mean and on the upper quartile of the same site values, and tests whether either catches the ED surges the median missed or comes earlier than the ED-only rule.
-- **Site-file audit (v0.3.1, descriptive, not pre-registered):** [results/wval-site-file-audit-2026-10-29.md](results/wval-site-file-audit-2026-10-29.md). In CDC's WVAL site file, 58% of influenza A and RSV site-weeks are exactly 1.0, the site's own baseline (13% for COVID-19), and state medians sit at 1.0 in about 55% of influenza and RSV state-weeks. Some site values run to 10^9 (influenza A) and 10^21 (RSV), far beyond the "Very high" cut-offs. It was written before any result of the follow-up existed and does not change how it is graded.
-- **Report (v0.3.1):** `ew/report.py` 1.2 turns the weekly series into one static HTML page that shows where the rule stands in every state now. Given the back-test's `results.json` and `states.csv`, it also shows how often each rule's alerts were right and each state's own record. New in 1.2: a series whose newest week is more than 2 weeks older than the page's newest week is marked stale and not counted as firing (the 2026-10-29 page had shown North Dakota's COVID-19 wastewater, last reported in September 2023, as "above median"), and the limits explain the 1.0 baseline. It applies the pre-registered rule as written and fits nothing new.
+- **Site-file audit (v0.3.1, descriptive, not pre-registered):** [results/wval-site-file-audit-2026-10-29.md](results/wval-site-file-audit-2026-10-29.md). In CDC's WVAL site file, 58% of influenza A and RSV site-weeks are exactly 1.0, the site's own baseline (13% for COVID-19), and state medians sit at 1.0 in about 55% of influenza and RSV state-weeks. Some site values run to 10^9 (influenza A) and 10^21 (RSV).
+- **Study v2 results (v0.4.0):** [results/ew-agg-results-v1-2026-10-29.md](results/ew-agg-results-v1-2026-10-29.md), graded exactly as pre-registered in [prereg/ew-agg-prereg-v1-2026-10-29.md](prereg/ew-agg-prereg-v1-2026-10-29.md); output in [results/ew-agg-v1/](results/ew-agg-v1/). A population-weighted mean of site values catches far more influenza and RSV ED surges than the median (sensitivity 58% vs 37% and 51% vs 26%), but with about three times the false alarms. The upper quartile gains less (47% and 35%) at about the same precision. No aggregate warns earlier than the ED-only rule. 11 of 13 predictions held.
+- **Study v3 (v0.4.1, pre-registered, results pending):** [prereg/ew-agg2-prereg-v1-2026-10-29.md](prereg/ew-agg2-prereg-v1-2026-10-29.md). Can an aggregate that single extreme sites cannot dominate keep the extra surges without the extra false alarms? `ew/agg2.py` tests a population-weighted geometric mean (the mean number of standard deviations above baseline) and the share of the population whose site is above baseline.
+- **Report:** `ew/report.py` 1.2 turns the weekly series into one static HTML page that shows where the rule stands in every state now, how often each rule's alerts were right, and each state's own record. Series more than 2 weeks behind are marked stale and not counted as firing. Dated snapshots: [report/2026-10-29/](report/2026-10-29/) (v0.4.0).
 
 ## What it does
 
@@ -36,13 +37,14 @@ python -m unittest discover -v
 python -m ew.run --out-dir out
 python -m ew.report --series out/series.csv --backtest out/results.json --states out/states.csv --out-dir out/report
 python -m ew.agg --out-dir out/agg
+python -m ew.agg2 --out-dir out/agg2
 ```
 
 Python 3.11+, standard library only. Fetching needs network access to data.cdc.gov.
 
 ## Limits
 
-These are state medians over very different sewersheds. For influenza A and RSV most sites sit at their baseline (WVAL 1.0) for much of the year, so a state median moves only once more than half of its sites rise (see the site-file audit). Both sources are revised, and the back-test uses the data as published on the fetch date. ED percent is a share of all visits. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
+These are state aggregates over very different sewersheds. For influenza A and RSV most sites sit at their baseline (WVAL 1.0) for much of the year, so a state median moves only once more than half of its sites rise (see the site-file audit). Both sources are revised, and the back-test uses the data as published on the fetch date. ED percent is a share of all visits. Studies v2 and v3 were designed after v1's result on the same history, so a prospective season is the real test. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
 
 ## Data and licence
 
