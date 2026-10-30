@@ -11,7 +11,8 @@ By MV2 of Munim, Inc. (mv2@munimtech.com). The code and text were made by AI age
 - **Site-file audit (v0.3.1, descriptive, not pre-registered):** [results/wval-site-file-audit-2026-10-29.md](results/wval-site-file-audit-2026-10-29.md). In CDC's WVAL site file, 58% of influenza A and RSV site-weeks are exactly 1.0, the site's own baseline (13% for COVID-19), and state medians sit at 1.0 in about 55% of influenza and RSV state-weeks. Some site values run to 10^9 (influenza A) and 10^21 (RSV).
 - **Study v2 results (v0.4.0):** [results/ew-agg-results-v1-2026-10-29.md](results/ew-agg-results-v1-2026-10-29.md), graded exactly as pre-registered in [prereg/ew-agg-prereg-v1-2026-10-29.md](prereg/ew-agg-prereg-v1-2026-10-29.md); output in [results/ew-agg-v1/](results/ew-agg-v1/). A population-weighted mean of site values catches far more influenza and RSV ED surges than the median (sensitivity 58% vs 37% and 51% vs 26%), but with about three times the false alarms. The upper quartile gains less (47% and 35%) at about the same precision. No aggregate warns earlier than the ED-only rule. 11 of 13 predictions held.
 - **Study v3 results (v0.4.2):** [results/ew-agg2-results-v1-2026-10-29.md](results/ew-agg2-results-v1-2026-10-29.md), graded exactly as pre-registered in [prereg/ew-agg2-prereg-v1-2026-10-29.md](prereg/ew-agg2-prereg-v1-2026-10-29.md); output in [results/ew-agg2-v1/](results/ew-agg2-v1/). Neither outlier-resistant aggregate keeps the extra surges without the extra false alarms (all six K2 tests fail). A population-weighted geometric mean behaves almost exactly like the raw population-weighted mean (influenza 91 surges caught by each, at 3.05 against 3.35 times the median's false alarms), so extreme single sites were not what drove study v2's result. No aggregate warns earlier than the ED-only rule. 18 of 19 predictions held.
-- **Prospective season check (v0.5.0, pre-registered, recording):** [prereg/ew-season-prereg-v1-2026-10-29.md](prereg/ew-season-prereg-v1-2026-10-29.md). The 2026-27 season will be scored on the alerts each rule showed on the data as published each week, not on revised data. `ew/watch.py` records them; the weekly records go in `watch/<date>/`.
+- **Prospective season check (v0.5.0, pre-registered, recording):** [prereg/ew-season-prereg-v1-2026-10-29.md](prereg/ew-season-prereg-v1-2026-10-29.md). The 2026-27 season will be scored on the alerts each rule showed on the data as published each week, not on revised data. `ew/watch.py` records them; the weekly records go in `watch/<date>/` (so far: [2026-10-29](watch/2026-10-29/) on the 2026-10-23 WVAL release, the baseline; [2026-10-30](watch/2026-10-30/) on the 2026-10-30 release).
+- **Release-to-release revisions (v0.6.0, pre-registered, running):** [prereg/ew-rev-prereg-v1-2026-10-30.md](prereg/ew-rev-prereg-v1-2026-10-30.md). How many state wastewater and ED values, and how many alerts, changed between the first two weekly records, by how much and how far back. Five fixed checks (D0-D4), including a control: the two records share one ED build, so the ED series must not change. `ew/revisions.py` counts them.
 - **Report:** `ew/report.py` 1.2 turns the weekly series into one static HTML page that shows where the rule stands in every state now, how often each rule's alerts were right, and each state's own record. Series more than 2 weeks behind are marked stale and not counted as firing. Dated snapshots: [report/2026-10-29/](report/2026-10-29/) (v0.4.0). The report keeps the state median: three retrospective studies found no aggregate that catches more surges at the same false-alarm cost, except possibly the upper quartile, which awaits the prospective season.
 
 ## What it does
@@ -39,6 +40,8 @@ All thresholds use past weeks only. Outputs are aggregate public data: `results.
 - `alerts.csv` and `recent.csv`: every alert and every value in the last 12 weeks, so later revisions can be counted;
 - `watch.json`: data versions, the gate and counts.
 
+`python -m ew.revisions --old watch/<date1> --new watch/<date2> --out-dir out/rev` compares two records over the weeks both cover: `revisions.json` (tallies by source, pathogen and lag, pooled shares, alert flips, the D0-D4 grades), `revisions.csv` (every value that changed, appeared or vanished) and `alert-flips.csv`.
+
 ## Run
 
 ```
@@ -48,6 +51,7 @@ python -m ew.report --series out/series.csv --backtest out/results.json --states
 python -m ew.agg --out-dir out/agg
 python -m ew.agg2 --out-dir out/agg2
 python -m ew.watch --out-dir out/watch
+python -m ew.revisions --old watch/2026-10-29 --new watch/2026-10-30 --out-dir out/rev
 ```
 
 Python 3.11+, standard library only. Fetching needs network access to data.cdc.gov.
