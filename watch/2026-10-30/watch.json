@@ -1,0 +1,136 @@
+{
+ "code_version": "1.0",
+ "counts": {
+  "ed": {
+   "covid": {
+    "firing": 7,
+    "new": 4,
+    "series": 51,
+    "stale": 1
+   },
+   "influenza": {
+    "firing": 39,
+    "new": 0,
+    "series": 51,
+    "stale": 1
+   },
+   "rsv": {
+    "firing": 1,
+    "new": 0,
+    "series": 51,
+    "stale": 1
+   }
+  },
+  "median": {
+   "covid": {
+    "firing": 16,
+    "new": 10,
+    "series": 51,
+    "stale": 1
+   },
+   "influenza": {
+    "firing": 9,
+    "new": 7,
+    "series": 51,
+    "stale": 2
+   },
+   "rsv": {
+    "firing": 0,
+    "new": 0,
+    "series": 51,
+    "stale": 3
+   }
+  },
+  "popgeo": {
+   "covid": {
+    "firing": 9,
+    "new": 6,
+    "series": 51,
+    "stale": 1
+   },
+   "influenza": {
+    "firing": 19,
+    "new": 7,
+    "series": 51,
+    "stale": 2
+   },
+   "rsv": {
+    "firing": 5,
+    "new": 4,
+    "series": 51,
+    "stale": 3
+   }
+  },
+  "popmean": {
+   "covid": {
+    "firing": 9,
+    "new": 4,
+    "series": 51,
+    "stale": 1
+   },
+   "influenza": {
+    "firing": 18,
+    "new": 8,
+    "series": 51,
+    "stale": 2
+   },
+   "rsv": {
+    "firing": 4,
+    "new": 3,
+    "series": 51,
+    "stale": 3
+   }
+  },
+  "q75": {
+   "covid": {
+    "firing": 14,
+    "new": 7,
+    "series": 51,
+    "stale": 1
+   },
+   "influenza": {
+    "firing": 15,
+    "new": 7,
+    "series": 51,
+    "stale": 2
+   },
+   "rsv": {
+    "firing": 0,
+    "new": 0,
+    "series": 51,
+    "stale": 3
+   }
+  }
+ },
+ "gate": {
+  "ed_rows": 10863,
+  "ed_skipped": 0,
+  "pass": true,
+  "states_matched": 51,
+  "wval_rows": 578000,
+  "wval_skipped": 0
+ },
+ "params": {
+  "event_q": 0.75,
+  "horizon": 4,
+  "min_hist": 40,
+  "q": 0.5,
+  "quiet": 4,
+  "refractory": 4,
+  "window": 52
+ },
+ "prereg": "prereg/ew-season-prereg-v1-2026-10-29.md",
+ "recent_weeks": 12,
+ "rows": {
+  "alerts": 495,
+  "recent": 8736,
+  "watch": 765
+ },
+ "timing": {
+  "ed_max_buildnumber": "2026-10-28",
+  "fetched_at_utc": "2026-10-30T19:28:00.978269+00:00",
+  "grid_first_week": "2022-01-01",
+  "grid_last_week": "2026-10-24",
+  "wval_max_date_updated": "2026-10-30 11:02"
+ }
+}
