@@ -1,0 +1,439 @@
+state,pathogen,source,alert_week
+Alabama,covid,median,2026-08-08
+Alabama,covid,median,2026-10-10
+Alabama,influenza,median,2026-10-10
+Alaska,covid,median,2026-09-12
+Alaska,influenza,median,2026-08-22
+Arizona,covid,median,2026-08-01
+Arkansas,covid,median,2026-08-08
+Arkansas,covid,median,2026-10-17
+California,influenza,median,2026-09-19
+Colorado,covid,median,2026-09-05
+Connecticut,covid,median,2026-08-22
+Connecticut,covid,median,2026-09-26
+Delaware,covid,median,2026-08-29
+District of Columbia,covid,median,2026-08-22
+Florida,covid,median,2026-08-08
+Florida,influenza,median,2026-09-26
+Florida,rsv,median,2026-10-03
+Georgia,covid,median,2026-08-01
+Hawaii,covid,median,2026-10-17
+Hawaii,influenza,median,2026-10-10
+Idaho,covid,median,2026-09-12
+Idaho,influenza,median,2026-10-10
+Indiana,covid,median,2026-10-17
+Iowa,covid,median,2026-10-17
+Kansas,covid,median,2026-09-19
+Kansas,influenza,median,2026-10-03
+Kentucky,covid,median,2026-08-01
+Kentucky,rsv,median,2026-10-10
+Louisiana,covid,median,2026-08-29
+Louisiana,influenza,median,2026-09-05
+Maine,covid,median,2026-09-12
+Maryland,covid,median,2026-09-19
+Massachusetts,covid,median,2026-09-12
+Michigan,covid,median,2026-09-26
+Michigan,influenza,median,2026-08-15
+Michigan,rsv,median,2026-08-22
+Minnesota,covid,median,2026-09-19
+Mississippi,covid,median,2026-08-15
+Mississippi,influenza,median,2026-09-19
+Missouri,covid,median,2026-08-15
+Missouri,covid,median,2026-09-26
+Montana,covid,median,2026-08-15
+Nebraska,covid,median,2026-09-26
+Nevada,influenza,median,2026-10-10
+New Hampshire,covid,median,2026-09-05
+New Hampshire,influenza,median,2026-09-26
+New Jersey,covid,median,2026-08-29
+North Carolina,covid,median,2026-08-15
+Oklahoma,covid,median,2026-08-15
+Oregon,covid,median,2026-09-19
+Oregon,influenza,median,2026-08-01
+Oregon,influenza,median,2026-09-12
+Pennsylvania,covid,median,2026-09-12
+Rhode Island,covid,median,2026-08-22
+South Carolina,covid,median,2026-08-08
+South Carolina,covid,median,2026-10-10
+Tennessee,covid,median,2026-08-22
+Tennessee,covid,median,2026-10-10
+Tennessee,influenza,median,2026-10-10
+Texas,covid,median,2026-08-22
+Texas,influenza,median,2026-08-22
+Utah,covid,median,2026-08-29
+Vermont,covid,median,2026-09-26
+Virginia,covid,median,2026-08-29
+Washington,covid,median,2026-08-08
+West Virginia,covid,median,2026-09-05
+Wisconsin,covid,median,2026-09-12
+Wisconsin,influenza,median,2026-09-12
+Wyoming,covid,median,2026-09-12
+Alabama,covid,q75,2026-08-08
+Alabama,covid,q75,2026-10-10
+Alabama,influenza,q75,2026-10-10
+Alabama,rsv,q75,2026-10-17
+Alaska,covid,q75,2026-08-22
+Alaska,influenza,q75,2026-08-29
+Arizona,covid,q75,2026-08-08
+Arkansas,covid,q75,2026-08-29
+Arkansas,covid,q75,2026-10-17
+California,influenza,q75,2026-09-12
+Colorado,covid,q75,2026-09-12
+Connecticut,covid,q75,2026-08-29
+Connecticut,covid,q75,2026-10-03
+Delaware,covid,q75,2026-09-05
+District of Columbia,covid,q75,2026-08-22
+Florida,covid,q75,2026-08-08
+Florida,influenza,q75,2026-09-19
+Florida,rsv,q75,2026-10-03
+Georgia,influenza,q75,2026-10-17
+Hawaii,influenza,q75,2026-09-19
+Hawaii,rsv,q75,2026-10-03
+Idaho,covid,q75,2026-08-15
+Idaho,influenza,q75,2026-08-15
+Idaho,influenza,q75,2026-10-10
+Illinois,covid,q75,2026-08-29
+Iowa,covid,q75,2026-10-10
+Kansas,covid,q75,2026-09-05
+Kansas,influenza,q75,2026-09-26
+Kentucky,covid,q75,2026-08-01
+Kentucky,covid,q75,2026-09-12
+Kentucky,influenza,q75,2026-09-12
+Kentucky,rsv,q75,2026-09-05
+Louisiana,influenza,q75,2026-09-05
+Maryland,covid,q75,2026-09-19
+Massachusetts,covid,q75,2026-09-05
+Michigan,covid,q75,2026-09-26
+Michigan,influenza,q75,2026-09-26
+Minnesota,covid,q75,2026-09-12
+Mississippi,covid,q75,2026-08-15
+Mississippi,influenza,q75,2026-10-17
+Missouri,covid,q75,2026-08-15
+Montana,covid,q75,2026-09-05
+Nebraska,covid,q75,2026-10-17
+Nevada,influenza,q75,2026-10-10
+New Hampshire,covid,q75,2026-09-05
+New Hampshire,influenza,q75,2026-10-03
+New Jersey,covid,q75,2026-08-15
+New Jersey,influenza,q75,2026-09-26
+New Mexico,covid,q75,2026-08-15
+New York,covid,q75,2026-09-19
+North Carolina,covid,q75,2026-08-15
+Oklahoma,covid,q75,2026-09-05
+Oregon,covid,q75,2026-08-01
+Oregon,covid,q75,2026-09-19
+Oregon,influenza,q75,2026-09-26
+Oregon,rsv,q75,2026-09-12
+Pennsylvania,covid,q75,2026-10-10
+Rhode Island,covid,q75,2026-08-22
+South Carolina,covid,q75,2026-08-15
+South Carolina,covid,q75,2026-10-10
+Tennessee,covid,q75,2026-08-22
+Tennessee,covid,q75,2026-10-10
+Texas,covid,q75,2026-08-22
+Texas,influenza,q75,2026-08-22
+Texas,influenza,q75,2026-10-03
+Texas,rsv,q75,2026-10-17
+Utah,covid,q75,2026-08-29
+Vermont,covid,q75,2026-08-29
+Vermont,covid,q75,2026-10-10
+Virginia,covid,q75,2026-08-22
+Washington,covid,q75,2026-08-08
+West Virginia,covid,q75,2026-08-08
+West Virginia,influenza,q75,2026-09-26
+Wyoming,covid,q75,2026-09-12
+Alabama,covid,popmean,2026-08-08
+Alabama,covid,popmean,2026-10-10
+Alabama,influenza,popmean,2026-09-05
+Alabama,rsv,popmean,2026-10-10
+Alaska,covid,popmean,2026-09-19
+Alaska,influenza,popmean,2026-08-29
+Arizona,covid,popmean,2026-10-03
+Arkansas,covid,popmean,2026-08-29
+Arkansas,covid,popmean,2026-10-17
+Arkansas,influenza,popmean,2026-08-15
+California,influenza,popmean,2026-09-12
+Colorado,covid,popmean,2026-09-12
+Colorado,influenza,popmean,2026-09-19
+Connecticut,covid,popmean,2026-08-22
+Delaware,covid,popmean,2026-09-05
+Delaware,influenza,popmean,2026-10-17
+District of Columbia,covid,popmean,2026-08-22
+Florida,covid,popmean,2026-08-29
+Florida,influenza,popmean,2026-08-29
+Georgia,covid,popmean,2026-08-01
+Georgia,influenza,popmean,2026-09-26
+Georgia,rsv,popmean,2026-10-17
+Hawaii,influenza,popmean,2026-09-05
+Hawaii,rsv,popmean,2026-08-22
+Hawaii,rsv,popmean,2026-10-03
+Idaho,covid,popmean,2026-08-15
+Idaho,covid,popmean,2026-10-03
+Idaho,influenza,popmean,2026-08-15
+Idaho,influenza,popmean,2026-10-10
+Illinois,covid,popmean,2026-09-05
+Illinois,influenza,popmean,2026-08-22
+Illinois,influenza,popmean,2026-10-03
+Indiana,covid,popmean,2026-08-22
+Iowa,covid,popmean,2026-09-12
+Iowa,influenza,popmean,2026-08-15
+Iowa,influenza,popmean,2026-10-17
+Kansas,influenza,popmean,2026-09-05
+Kentucky,covid,popmean,2026-08-01
+Kentucky,covid,popmean,2026-09-05
+Kentucky,covid,popmean,2026-10-10
+Kentucky,influenza,popmean,2026-09-12
+Kentucky,influenza,popmean,2026-10-17
+Kentucky,rsv,popmean,2026-08-15
+Kentucky,rsv,popmean,2026-10-03
+Louisiana,influenza,popmean,2026-09-05
+Maine,covid,popmean,2026-09-12
+Maine,influenza,popmean,2026-09-12
+Maryland,covid,popmean,2026-08-29
+Massachusetts,covid,popmean,2026-09-05
+Massachusetts,influenza,popmean,2026-09-19
+Michigan,influenza,popmean,2026-09-26
+Minnesota,covid,popmean,2026-09-12
+Minnesota,influenza,popmean,2026-09-12
+Minnesota,rsv,popmean,2026-09-12
+Mississippi,influenza,popmean,2026-09-19
+Missouri,influenza,popmean,2026-08-29
+Montana,covid,popmean,2026-08-22
+Montana,covid,popmean,2026-10-10
+Nebraska,influenza,popmean,2026-10-17
+Nevada,influenza,popmean,2026-08-01
+Nevada,influenza,popmean,2026-09-05
+New Hampshire,covid,popmean,2026-08-29
+New Hampshire,influenza,popmean,2026-09-26
+New Jersey,covid,popmean,2026-08-22
+New Mexico,covid,popmean,2026-09-12
+New York,influenza,popmean,2026-09-05
+New York,rsv,popmean,2026-09-05
+North Carolina,covid,popmean,2026-08-08
+North Carolina,influenza,popmean,2026-08-15
+North Carolina,influenza,popmean,2026-09-26
+North Carolina,rsv,popmean,2026-08-01
+Ohio,covid,popmean,2026-09-12
+Ohio,influenza,popmean,2026-09-12
+Oklahoma,covid,popmean,2026-09-26
+Oregon,covid,popmean,2026-08-22
+Pennsylvania,covid,popmean,2026-10-17
+Pennsylvania,influenza,popmean,2026-10-10
+Rhode Island,covid,popmean,2026-08-22
+South Carolina,covid,popmean,2026-08-15
+South Carolina,influenza,popmean,2026-08-15
+South Carolina,influenza,popmean,2026-10-17
+South Carolina,rsv,popmean,2026-08-29
+South Carolina,rsv,popmean,2026-10-17
+South Dakota,covid,popmean,2026-08-29
+Tennessee,covid,popmean,2026-08-22
+Tennessee,covid,popmean,2026-10-10
+Tennessee,influenza,popmean,2026-10-10
+Texas,covid,popmean,2026-08-22
+Texas,influenza,popmean,2026-08-22
+Texas,rsv,popmean,2026-10-17
+Utah,covid,popmean,2026-08-22
+Utah,influenza,popmean,2026-09-05
+Vermont,covid,popmean,2026-10-10
+Vermont,influenza,popmean,2026-09-19
+Vermont,rsv,popmean,2026-08-29
+Virginia,covid,popmean,2026-08-22
+Washington,covid,popmean,2026-08-08
+Washington,influenza,popmean,2026-09-12
+West Virginia,covid,popmean,2026-08-29
+West Virginia,covid,popmean,2026-10-10
+West Virginia,influenza,popmean,2026-09-26
+Wisconsin,influenza,popmean,2026-09-05
+Wyoming,covid,popmean,2026-09-12
+Alabama,covid,popgeo,2026-08-08
+Alabama,covid,popgeo,2026-10-10
+Alabama,influenza,popgeo,2026-09-05
+Alaska,covid,popgeo,2026-09-19
+Alaska,influenza,popgeo,2026-08-01
+Arizona,covid,popgeo,2026-08-01
+Arizona,covid,popgeo,2026-10-03
+Arizona,influenza,popgeo,2026-09-26
+Arkansas,covid,popgeo,2026-08-22
+Arkansas,covid,popgeo,2026-10-17
+Arkansas,influenza,popgeo,2026-08-15
+California,influenza,popgeo,2026-09-12
+Colorado,covid,popgeo,2026-09-05
+Colorado,influenza,popgeo,2026-09-19
+Connecticut,covid,popgeo,2026-08-22
+Delaware,covid,popgeo,2026-09-05
+Delaware,influenza,popgeo,2026-10-17
+District of Columbia,covid,popgeo,2026-08-22
+Florida,covid,popgeo,2026-08-29
+Florida,influenza,popgeo,2026-08-29
+Georgia,covid,popgeo,2026-08-01
+Georgia,influenza,popgeo,2026-09-26
+Georgia,rsv,popgeo,2026-10-17
+Hawaii,influenza,popgeo,2026-09-05
+Hawaii,rsv,popgeo,2026-08-22
+Hawaii,rsv,popgeo,2026-10-03
+Idaho,covid,popgeo,2026-08-15
+Idaho,covid,popgeo,2026-10-03
+Idaho,influenza,popgeo,2026-08-15
+Idaho,influenza,popgeo,2026-10-10
+Illinois,covid,popgeo,2026-09-05
+Illinois,influenza,popgeo,2026-09-19
+Indiana,covid,popgeo,2026-08-29
+Indiana,influenza,popgeo,2026-10-17
+Iowa,covid,popgeo,2026-09-12
+Iowa,influenza,popgeo,2026-08-15
+Iowa,influenza,popgeo,2026-10-17
+Kansas,covid,popgeo,2026-09-05
+Kansas,influenza,popgeo,2026-09-05
+Kentucky,covid,popgeo,2026-08-01
+Kentucky,covid,popgeo,2026-09-05
+Kentucky,covid,popgeo,2026-10-10
+Kentucky,influenza,popgeo,2026-09-05
+Kentucky,rsv,popgeo,2026-08-15
+Kentucky,rsv,popgeo,2026-10-03
+Louisiana,influenza,popgeo,2026-09-05
+Maine,covid,popgeo,2026-09-12
+Maine,influenza,popgeo,2026-09-12
+Maryland,covid,popgeo,2026-09-19
+Massachusetts,covid,popgeo,2026-09-05
+Michigan,influenza,popgeo,2026-10-10
+Minnesota,covid,popgeo,2026-09-12
+Minnesota,influenza,popgeo,2026-09-12
+Minnesota,rsv,popgeo,2026-09-12
+Mississippi,influenza,popgeo,2026-09-19
+Missouri,covid,popgeo,2026-10-17
+Missouri,influenza,popgeo,2026-08-29
+Montana,covid,popgeo,2026-08-15
+Montana,covid,popgeo,2026-10-10
+Nebraska,influenza,popgeo,2026-10-17
+Nevada,influenza,popgeo,2026-08-01
+Nevada,influenza,popgeo,2026-09-05
+New Hampshire,covid,popgeo,2026-08-29
+New Hampshire,influenza,popgeo,2026-09-26
+New Jersey,covid,popgeo,2026-08-29
+New Mexico,covid,popgeo,2026-09-12
+New York,influenza,popgeo,2026-09-05
+New York,rsv,popgeo,2026-09-05
+North Carolina,covid,popgeo,2026-08-15
+North Carolina,influenza,popgeo,2026-08-15
+North Carolina,influenza,popgeo,2026-09-19
+Ohio,covid,popgeo,2026-09-12
+Ohio,influenza,popgeo,2026-09-12
+Oklahoma,covid,popgeo,2026-09-26
+Oregon,covid,popgeo,2026-08-22
+Pennsylvania,covid,popgeo,2026-09-19
+Rhode Island,covid,popgeo,2026-08-22
+South Carolina,covid,popgeo,2026-08-15
+South Carolina,rsv,popgeo,2026-08-29
+South Carolina,rsv,popgeo,2026-10-17
+South Dakota,covid,popgeo,2026-08-29
+Tennessee,covid,popgeo,2026-08-22
+Tennessee,covid,popgeo,2026-10-10
+Tennessee,influenza,popgeo,2026-10-10
+Texas,covid,popgeo,2026-08-22
+Texas,influenza,popgeo,2026-08-22
+Texas,rsv,popgeo,2026-10-17
+Utah,covid,popgeo,2026-08-22
+Utah,influenza,popgeo,2026-09-05
+Vermont,influenza,popgeo,2026-09-19
+Virginia,covid,popgeo,2026-08-22
+Washington,covid,popgeo,2026-08-08
+Washington,influenza,popgeo,2026-09-12
+West Virginia,covid,popgeo,2026-08-29
+West Virginia,covid,popgeo,2026-10-10
+Wisconsin,influenza,popgeo,2026-09-05
+Wyoming,covid,popgeo,2026-09-12
+Wyoming,covid,popgeo,2026-10-17
+Alabama,covid,ed,2026-08-08
+Alabama,influenza,ed,2026-09-05
+Alabama,rsv,ed,2026-10-03
+Alaska,covid,ed,2026-08-29
+Alaska,influenza,ed,2026-08-22
+Arizona,covid,ed,2026-08-08
+Arizona,covid,ed,2026-10-17
+Arizona,influenza,ed,2026-10-17
+Arkansas,covid,ed,2026-08-29
+Arkansas,covid,ed,2026-10-10
+Arkansas,influenza,ed,2026-09-26
+California,influenza,ed,2026-09-12
+Colorado,influenza,ed,2026-10-10
+Connecticut,covid,ed,2026-09-12
+Connecticut,influenza,ed,2026-10-03
+Delaware,covid,ed,2026-09-12
+Delaware,influenza,ed,2026-09-26
+District of Columbia,covid,ed,2026-09-19
+District of Columbia,influenza,ed,2026-10-10
+Florida,influenza,ed,2026-09-19
+Florida,rsv,ed,2026-10-03
+Georgia,covid,ed,2026-08-01
+Georgia,influenza,ed,2026-09-19
+Hawaii,covid,ed,2026-08-08
+Hawaii,influenza,ed,2026-09-26
+Hawaii,rsv,ed,2026-09-12
+Idaho,influenza,ed,2026-09-26
+Illinois,influenza,ed,2026-09-19
+Indiana,covid,ed,2026-10-10
+Indiana,influenza,ed,2026-09-26
+Kansas,influenza,ed,2026-09-26
+Kentucky,covid,ed,2026-10-10
+Kentucky,influenza,ed,2026-09-26
+Louisiana,influenza,ed,2026-09-19
+Louisiana,rsv,ed,2026-10-17
+Maine,covid,ed,2026-09-26
+Maine,influenza,ed,2026-09-19
+Maryland,covid,ed,2026-09-12
+Maryland,influenza,ed,2026-10-03
+Massachusetts,covid,ed,2026-09-26
+Massachusetts,influenza,ed,2026-09-26
+Michigan,influenza,ed,2026-09-05
+Minnesota,influenza,ed,2026-09-26
+Mississippi,covid,ed,2026-08-15
+Mississippi,influenza,ed,2026-09-19
+Missouri,covid,ed,2026-09-12
+Missouri,covid,ed,2026-10-17
+Missouri,influenza,ed,2026-09-12
+Montana,covid,ed,2026-10-10
+Montana,influenza,ed,2026-09-19
+Nebraska,covid,ed,2026-09-19
+Nebraska,influenza,ed,2026-09-26
+Nevada,covid,ed,2026-08-01
+Nevada,influenza,ed,2026-10-03
+New Hampshire,covid,ed,2026-09-19
+New Hampshire,influenza,ed,2026-10-03
+New Jersey,covid,ed,2026-09-05
+New Jersey,influenza,ed,2026-09-26
+New Mexico,covid,ed,2026-10-10
+New Mexico,influenza,ed,2026-10-17
+New York,covid,ed,2026-08-29
+New York,influenza,ed,2026-10-03
+North Carolina,covid,ed,2026-08-22
+North Carolina,influenza,ed,2026-09-12
+Ohio,influenza,ed,2026-09-26
+Oklahoma,covid,ed,2026-08-29
+Oklahoma,influenza,ed,2026-09-19
+Oregon,covid,ed,2026-08-08
+Oregon,influenza,ed,2026-09-19
+Pennsylvania,influenza,ed,2026-09-26
+Rhode Island,covid,ed,2026-09-12
+Rhode Island,influenza,ed,2026-10-17
+South Carolina,covid,ed,2026-08-15
+South Carolina,influenza,ed,2026-09-19
+South Dakota,influenza,ed,2026-09-26
+Tennessee,covid,ed,2026-08-22
+Tennessee,covid,ed,2026-10-10
+Tennessee,influenza,ed,2026-09-26
+Texas,influenza,ed,2026-09-19
+Texas,rsv,ed,2026-10-17
+Utah,covid,ed,2026-09-12
+Utah,influenza,ed,2026-09-12
+Vermont,covid,ed,2026-10-03
+Vermont,influenza,ed,2026-10-17
+Virginia,covid,ed,2026-08-29
+Virginia,influenza,ed,2026-09-26
+Washington,covid,ed,2026-08-08
+Washington,influenza,ed,2026-09-12
+West Virginia,covid,ed,2026-09-26
+West Virginia,influenza,ed,2026-09-26
+Wisconsin,covid,ed,2026-10-03
+Wisconsin,influenza,ed,2026-09-05
+Wyoming,covid,ed,2026-10-03
+Wyoming,influenza,ed,2026-09-26
