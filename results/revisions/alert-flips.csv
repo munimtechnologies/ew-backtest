@@ -1,0 +1,40 @@
+state,pathogen,source,alert_week,kind
+Alaska,covid,median,2026-09-12,vanished
+Alaska,covid,q75,2026-08-22,vanished
+Georgia,rsv,popgeo,2026-10-17,vanished
+Idaho,covid,median,2026-09-12,vanished
+Idaho,covid,popgeo,2026-08-15,vanished
+Idaho,covid,popmean,2026-08-15,vanished
+Idaho,covid,q75,2026-08-15,vanished
+Iowa,influenza,popmean,2026-10-17,vanished
+Maryland,covid,median,2026-09-19,vanished
+Oklahoma,covid,popgeo,2026-09-26,vanished
+Oklahoma,covid,popmean,2026-09-26,vanished
+Oklahoma,covid,q75,2026-09-05,vanished
+South Carolina,influenza,popmean,2026-08-15,vanished
+Texas,covid,q75,2026-08-22,vanished
+West Virginia,covid,median,2026-09-05,vanished
+Wisconsin,influenza,median,2026-09-12,vanished
+Alaska,covid,q75,2026-09-19,appeared
+Arizona,influenza,popmean,2026-10-17,appeared
+Georgia,covid,popgeo,2026-10-17,appeared
+Idaho,covid,median,2026-08-15,appeared
+Idaho,covid,q75,2026-10-10,appeared
+Iowa,influenza,q75,2026-10-17,appeared
+Maryland,covid,median,2026-08-29,appeared
+Nebraska,influenza,q75,2026-10-17,appeared
+New Hampshire,covid,median,2026-10-17,appeared
+New York,rsv,popgeo,2026-10-17,appeared
+New York,rsv,popmean,2026-10-17,appeared
+North Carolina,covid,popmean,2026-10-10,appeared
+Oklahoma,covid,popgeo,2026-08-29,appeared
+Oklahoma,covid,popgeo,2026-10-03,appeared
+Oklahoma,covid,popmean,2026-08-29,appeared
+Oklahoma,covid,popmean,2026-10-03,appeared
+Oklahoma,covid,q75,2026-08-29,appeared
+Wisconsin,covid,popgeo,2026-09-05,appeared
+Wisconsin,covid,popmean,2026-09-05,appeared
+Wisconsin,covid,q75,2026-09-12,appeared
+Wisconsin,influenza,q75,2026-09-26,appeared
+Wisconsin,rsv,popgeo,2026-09-05,appeared
+Wisconsin,rsv,popmean,2026-09-05,appeared

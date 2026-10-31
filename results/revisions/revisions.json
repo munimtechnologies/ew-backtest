@@ -1,0 +1,702 @@
+{
+ "alert_flips": {
+  "ed": {
+   "appeared": 0,
+   "vanished": 0
+  },
+  "median": {
+   "appeared": 3,
+   "vanished": 5
+  },
+  "popgeo": {
+   "appeared": 6,
+   "vanished": 3
+  },
+  "popmean": {
+   "appeared": 7,
+   "vanished": 4
+  },
+  "q75": {
+   "appeared": 7,
+   "vanished": 4
+  }
+ },
+ "code_version": "1.0",
+ "common_weeks": [
+  "2026-08-08",
+  "2026-08-15",
+  "2026-08-22",
+  "2026-08-29",
+  "2026-09-05",
+  "2026-09-12",
+  "2026-09-19",
+  "2026-09-26",
+  "2026-10-03",
+  "2026-10-10",
+  "2026-10-17"
+ ],
+ "gates": {
+  "new": true,
+  "old": true
+ },
+ "grades": {
+  "D0": "pass",
+  "D1": "pass",
+  "D2": "pass",
+  "D3": "pass",
+  "D4": "pass"
+ },
+ "pooled_ww": {
+  "0": [
+   295,
+   568
+  ],
+  "1": [
+   134,
+   568
+  ],
+  "2-3": [
+   219,
+   1136
+  ],
+  "4+": [
+   747,
+   4112
+  ]
+ },
+ "prereg": "prereg/ew-rev-prereg-v1-2026-10-30.md",
+ "records": {
+  "new": "2026-10-30",
+  "old": "2026-10-29"
+ },
+ "shares": {
+  "ed": {
+   "0": [
+    0,
+    144
+   ],
+   "1": [
+    0,
+    150
+   ],
+   "2-3": [
+    0,
+    300
+   ],
+   "4+": [
+    0,
+    1050
+   ]
+  },
+  "median": {
+   "0": [
+    56,
+    142
+   ],
+   "1": [
+    21,
+    142
+   ],
+   "2-3": [
+    32,
+    284
+   ],
+   "4+": [
+    103,
+    1028
+   ]
+  },
+  "popgeo": {
+   "0": [
+    93,
+    142
+   ],
+   "1": [
+    46,
+    142
+   ],
+   "2-3": [
+    79,
+    284
+   ],
+   "4+": [
+    259,
+    1028
+   ]
+  },
+  "popmean": {
+   "0": [
+    93,
+    142
+   ],
+   "1": [
+    46,
+    142
+   ],
+   "2-3": [
+    83,
+    284
+   ],
+   "4+": [
+    275,
+    1028
+   ]
+  },
+  "q75": {
+   "0": [
+    53,
+    142
+   ],
+   "1": [
+    21,
+    142
+   ],
+   "2-3": [
+    25,
+    284
+   ],
+   "4+": [
+    110,
+    1028
+   ]
+  }
+ },
+ "tally": {
+  "ed": {
+   "covid": {
+    "0": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 48,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 50,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 100,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 350,
+     "vanished": 0
+    }
+   },
+   "influenza": {
+    "0": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 48,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 50,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 100,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 350,
+     "vanished": 0
+    }
+   },
+   "rsv": {
+    "0": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 48,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 50,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 100,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 0,
+     "med_abs_rel": null,
+     "n": 350,
+     "vanished": 0
+    }
+   }
+  },
+  "median": {
+   "covid": {
+    "0": {
+     "appeared": 2,
+     "big": 11,
+     "changed": 30,
+     "med_abs_rel": 0.0603,
+     "n": 49,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 3,
+     "changed": 12,
+     "med_abs_rel": 0.0279,
+     "n": 49,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 7,
+     "changed": 20,
+     "med_abs_rel": 0.021,
+     "n": 98,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 31,
+     "changed": 84,
+     "med_abs_rel": 0.0472,
+     "n": 349,
+     "vanished": 0
+    }
+   },
+   "influenza": {
+    "0": {
+     "appeared": 3,
+     "big": 9,
+     "changed": 13,
+     "med_abs_rel": 0.1762,
+     "n": 47,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 1,
+     "big": 3,
+     "changed": 6,
+     "med_abs_rel": 0.1037,
+     "n": 47,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 2,
+     "big": 0,
+     "changed": 5,
+     "med_abs_rel": 0.0121,
+     "n": 94,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 2,
+     "changed": 7,
+     "med_abs_rel": 0.0295,
+     "n": 340,
+     "vanished": 0
+    }
+   },
+   "rsv": {
+    "0": {
+     "appeared": 3,
+     "big": 2,
+     "changed": 5,
+     "med_abs_rel": 0.0516,
+     "n": 46,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 2,
+     "med_abs_rel": 0.0231,
+     "n": 46,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 5,
+     "med_abs_rel": 0.0141,
+     "n": 92,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 1,
+     "changed": 12,
+     "med_abs_rel": 0.0144,
+     "n": 339,
+     "vanished": 0
+    }
+   }
+  },
+  "popgeo": {
+   "covid": {
+    "0": {
+     "appeared": 2,
+     "big": 11,
+     "changed": 36,
+     "med_abs_rel": 0.0473,
+     "n": 49,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 3,
+     "changed": 22,
+     "med_abs_rel": 0.0048,
+     "n": 49,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 2,
+     "changed": 43,
+     "med_abs_rel": 0.0008,
+     "n": 98,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 26,
+     "changed": 162,
+     "med_abs_rel": 0.0035,
+     "n": 349,
+     "vanished": 0
+    }
+   },
+   "influenza": {
+    "0": {
+     "appeared": 3,
+     "big": 9,
+     "changed": 29,
+     "med_abs_rel": 0.0402,
+     "n": 47,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 1,
+     "big": 1,
+     "changed": 15,
+     "med_abs_rel": 0.0144,
+     "n": 47,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 2,
+     "big": 1,
+     "changed": 25,
+     "med_abs_rel": 0.0013,
+     "n": 94,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 1,
+     "changed": 59,
+     "med_abs_rel": 0.0007,
+     "n": 340,
+     "vanished": 0
+    }
+   },
+   "rsv": {
+    "0": {
+     "appeared": 3,
+     "big": 6,
+     "changed": 20,
+     "med_abs_rel": 0.0123,
+     "n": 46,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 1,
+     "changed": 8,
+     "med_abs_rel": 0.0027,
+     "n": 46,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 9,
+     "med_abs_rel": 0.0025,
+     "n": 92,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 1,
+     "changed": 38,
+     "med_abs_rel": 0.0018,
+     "n": 339,
+     "vanished": 0
+    }
+   }
+  },
+  "popmean": {
+   "covid": {
+    "0": {
+     "appeared": 2,
+     "big": 10,
+     "changed": 36,
+     "med_abs_rel": 0.0351,
+     "n": 49,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 3,
+     "changed": 22,
+     "med_abs_rel": 0.0054,
+     "n": 49,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 2,
+     "changed": 44,
+     "med_abs_rel": 0.0013,
+     "n": 98,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 29,
+     "changed": 167,
+     "med_abs_rel": 0.004,
+     "n": 349,
+     "vanished": 0
+    }
+   },
+   "influenza": {
+    "0": {
+     "appeared": 3,
+     "big": 11,
+     "changed": 29,
+     "med_abs_rel": 0.0429,
+     "n": 47,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 1,
+     "big": 2,
+     "changed": 15,
+     "med_abs_rel": 0.0058,
+     "n": 47,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 2,
+     "big": 1,
+     "changed": 26,
+     "med_abs_rel": 0.0009,
+     "n": 94,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 5,
+     "changed": 63,
+     "med_abs_rel": 0.0012,
+     "n": 340,
+     "vanished": 0
+    }
+   },
+   "rsv": {
+    "0": {
+     "appeared": 3,
+     "big": 8,
+     "changed": 20,
+     "med_abs_rel": 0.0664,
+     "n": 46,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 2,
+     "changed": 8,
+     "med_abs_rel": 0.0067,
+     "n": 46,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 11,
+     "med_abs_rel": 0.003,
+     "n": 92,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 5,
+     "changed": 45,
+     "med_abs_rel": 0.0015,
+     "n": 339,
+     "vanished": 0
+    }
+   }
+  },
+  "q75": {
+   "covid": {
+    "0": {
+     "appeared": 2,
+     "big": 12,
+     "changed": 25,
+     "med_abs_rel": 0.0943,
+     "n": 49,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 5,
+     "changed": 14,
+     "med_abs_rel": 0.0699,
+     "n": 49,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 2,
+     "changed": 12,
+     "med_abs_rel": 0.0129,
+     "n": 98,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 30,
+     "changed": 85,
+     "med_abs_rel": 0.0441,
+     "n": 349,
+     "vanished": 0
+    }
+   },
+   "influenza": {
+    "0": {
+     "appeared": 3,
+     "big": 13,
+     "changed": 15,
+     "med_abs_rel": 0.2522,
+     "n": 47,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 1,
+     "big": 2,
+     "changed": 3,
+     "med_abs_rel": 0.3304,
+     "n": 47,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 2,
+     "big": 1,
+     "changed": 8,
+     "med_abs_rel": 0.0195,
+     "n": 94,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 11,
+     "med_abs_rel": 0.0119,
+     "n": 340,
+     "vanished": 0
+    }
+   },
+   "rsv": {
+    "0": {
+     "appeared": 3,
+     "big": 3,
+     "changed": 5,
+     "med_abs_rel": 0.1194,
+     "n": 46,
+     "vanished": 0
+    },
+    "1": {
+     "appeared": 0,
+     "big": 1,
+     "changed": 3,
+     "med_abs_rel": 0.0292,
+     "n": 46,
+     "vanished": 0
+    },
+    "2-3": {
+     "appeared": 0,
+     "big": 0,
+     "changed": 3,
+     "med_abs_rel": 0.012,
+     "n": 92,
+     "vanished": 0
+    },
+    "4+": {
+     "appeared": 0,
+     "big": 2,
+     "changed": 14,
+     "med_abs_rel": 0.01,
+     "n": 339,
+     "vanished": 0
+    }
+   }
+  }
+ },
+ "timing": {
+  "new": {
+   "ed_max_buildnumber": "2026-10-28",
+   "fetched_at_utc": "2026-10-30T19:28:00.978269+00:00",
+   "grid_first_week": "2022-01-01",
+   "grid_last_week": "2026-10-24",
+   "wval_max_date_updated": "2026-10-30 11:02"
+  },
+  "old": {
+   "ed_max_buildnumber": "2026-10-28",
+   "fetched_at_utc": "2026-10-29T23:55:52.491358+00:00",
+   "grid_first_week": "2022-01-01",
+   "grid_last_week": "2026-10-17",
+   "wval_max_date_updated": "2026-10-23 11:03"
+  }
+ }
+}
