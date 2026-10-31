@@ -12,7 +12,8 @@ By MV2 of Munim, Inc. (mv2@munimtech.com). The code and text were made by AI age
 - **Study v2 results (v0.4.0):** [results/ew-agg-results-v1-2026-10-29.md](results/ew-agg-results-v1-2026-10-29.md), graded exactly as pre-registered in [prereg/ew-agg-prereg-v1-2026-10-29.md](prereg/ew-agg-prereg-v1-2026-10-29.md); output in [results/ew-agg-v1/](results/ew-agg-v1/). A population-weighted mean of site values catches far more influenza and RSV ED surges than the median (sensitivity 58% vs 37% and 51% vs 26%), but with about three times the false alarms. The upper quartile gains less (47% and 35%) at about the same precision. No aggregate warns earlier than the ED-only rule. 11 of 13 predictions held.
 - **Study v3 results (v0.4.2):** [results/ew-agg2-results-v1-2026-10-29.md](results/ew-agg2-results-v1-2026-10-29.md), graded exactly as pre-registered in [prereg/ew-agg2-prereg-v1-2026-10-29.md](prereg/ew-agg2-prereg-v1-2026-10-29.md); output in [results/ew-agg2-v1/](results/ew-agg2-v1/). Neither outlier-resistant aggregate keeps the extra surges without the extra false alarms (all six K2 tests fail). A population-weighted geometric mean behaves almost exactly like the raw population-weighted mean (influenza 91 surges caught by each, at 3.05 against 3.35 times the median's false alarms), so extreme single sites were not what drove study v2's result. No aggregate warns earlier than the ED-only rule. 18 of 19 predictions held.
 - **Prospective season check (v0.5.0, pre-registered, recording):** [prereg/ew-season-prereg-v1-2026-10-29.md](prereg/ew-season-prereg-v1-2026-10-29.md). The 2026-27 season will be scored on the alerts each rule showed on the data as published each week, not on revised data. `ew/watch.py` records them; the weekly records go in `watch/<date>/` (so far: [2026-10-29](watch/2026-10-29/) on the 2026-10-23 WVAL release, the baseline; [2026-10-30](watch/2026-10-30/) on the 2026-10-30 release).
-- **Release-to-release revisions (v0.6.0, pre-registered, running):** [prereg/ew-rev-prereg-v1-2026-10-30.md](prereg/ew-rev-prereg-v1-2026-10-30.md). How many state wastewater and ED values, and how many alerts, changed between the first two weekly records, by how much and how far back. Five fixed checks (D0-D4), including a control: the two records share one ED build, so the ED series must not change. `ew/revisions.py` counts them.
+- **Release-to-release revisions, study R1 (results v0.6.1):** [results/revisions/ew-rev-results-v1-2026-10-31.md](results/revisions/ew-rev-results-v1-2026-10-31.md), graded exactly as pre-registered in [prereg/ew-rev-prereg-v1-2026-10-30.md](prereg/ew-rev-prereg-v1-2026-10-30.md); 5 of 5 predictions held. Between the 2026-10-23 and 2026-10-30 WVAL releases, 21.9% of state wastewater values in the 11 common weeks changed (51.9% in the newest week, 18.2% of values four to ten weeks old), while the ED control did not change at all. 39 alert weeks flipped: 16 vanished and 23 appeared, and 2 of the 30 wastewater alerts shown for the newest week were gone on the next release. Old-week changes were mostly COVID-19, and some whole state histories moved (the District of Columbia's COVID-19 median rose by a factor of 2.74 to 2.92 in each of six weeks).
+- **Why values change, study R2 (v0.7.0, pre-registered, recording):** [prereg/ew-sites-prereg-v1-2026-10-31.md](prereg/ew-sites-prereg-v1-2026-10-31.md). From 2026-11-06 each weekly record also keeps every site's value (`watch/<date>/sites/`), so the first pair of such records can say whether state values move because sites report late, because sites join or leave, or because the same sites' values change, and whether any site's history is rescaled by one factor. Five fixed checks (E0-E4), including a control that each snapshot reproduces its own record's state medians. `ew/sites.py` does both.
 - **Report:** `ew/report.py` 1.2 turns the weekly series into one static HTML page that shows where the rule stands in every state now, how often each rule's alerts were right, and each state's own record. Series more than 2 weeks behind are marked stale and not counted as firing. Dated snapshots: [report/2026-10-29/](report/2026-10-29/) (v0.4.0). The report keeps the state median: three retrospective studies found no aggregate that catches more surges at the same false-alarm cost, except possibly the upper quartile, which awaits the prospective season.
 
 ## What it does
@@ -40,7 +41,11 @@ All thresholds use past weeks only. Outputs are aggregate public data: `results.
 - `alerts.csv` and `recent.csv`: every alert and every value in the last 12 weeks, so later revisions can be counted;
 - `watch.json`: data versions, the gate and counts.
 
+`python -m ew.sites snapshot --out-dir out/watch/sites` adds every site's value in the newest 12 weeks of the WVAL file (`sites-covid.csv`, `sites-influenza.csv`, `sites-rsv.csv`, `sites.json`).
+
 `python -m ew.revisions --old watch/<date1> --new watch/<date2> --out-dir out/rev` compares two records over the weeks both cover: `revisions.json` (tallies by source, pathogen and lag, pooled shares, alert flips, the D0-D4 grades), `revisions.csv` (every value that changed, appeared or vanished) and `alert-flips.csv`.
+
+`python -m ew.sites diff --old watch/<date1> --new watch/<date2> --out-dir out/sitediff` compares two records' site snapshots: `sitediff.json` (site-week tallies, which revised state medians come from sites joining or leaving and which from changed values, the E0 consistency check and the E0-E4 grades), `site-changes.csv`, `state-changes.csv` and `rescaled.csv`.
 
 ## Run
 
@@ -51,6 +56,7 @@ python -m ew.report --series out/series.csv --backtest out/results.json --states
 python -m ew.agg --out-dir out/agg
 python -m ew.agg2 --out-dir out/agg2
 python -m ew.watch --out-dir out/watch
+python -m ew.sites snapshot --out-dir out/watch/sites
 python -m ew.revisions --old watch/2026-10-29 --new watch/2026-10-30 --out-dir out/rev
 ```
 
@@ -58,7 +64,7 @@ Python 3.11+, standard library only. Fetching needs network access to data.cdc.g
 
 ## Limits
 
-These are state aggregates over very different sewersheds. For influenza A and RSV most sites sit at their baseline (WVAL 1.0) for much of the year, so a state median moves only once more than half of its sites rise (see the site-file audit). Both sources are revised, and the back-tests use the data as published on the fetch date. ED percent is a share of all visits. Studies v2 and v3 were designed after v1's result on the same history, so the prospective season is the real test. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
+These are state aggregates over very different sewersheds. For influenza A and RSV most sites sit at their baseline (WVAL 1.0) for much of the year, so a state median moves only once more than half of its sites rise (see the site-file audit). Both sources are revised between weekly releases (study R1 counts how much), and the back-tests use the data as published on the fetch date. ED percent is a share of all visits. Studies v2 and v3 were designed after v1's result on the same history, so the prospective season is the real test. This is research information for public-health readers. It is not medical advice and not a forecast for any person or place.
 
 ## Data and licence
 
