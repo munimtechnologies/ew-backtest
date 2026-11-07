@@ -1,0 +1,66 @@
+state,pathogen,source,alert_week,kind
+Arizona,covid,median,2026-10-24,vanished
+Arkansas,covid,popgeo,2026-08-22,vanished
+Arkansas,covid,popmean,2026-08-29,vanished
+Arkansas,influenza,median,2026-10-24,vanished
+Arkansas,influenza,popgeo,2026-10-24,vanished
+Georgia,influenza,median,2026-10-24,vanished
+Indiana,covid,median,2026-10-17,vanished
+Kentucky,influenza,popmean,2026-10-17,vanished
+Maryland,covid,median,2026-08-29,vanished
+Massachusetts,influenza,q75,2026-10-24,vanished
+Michigan,influenza,ed,2026-09-05,vanished
+Mississippi,influenza,median,2026-09-19,vanished
+Mississippi,influenza,q75,2026-10-17,vanished
+Missouri,covid,ed,2026-10-17,vanished
+Nevada,covid,median,2026-10-24,vanished
+New Mexico,covid,q75,2026-08-15,vanished
+North Carolina,covid,popgeo,2026-10-24,vanished
+North Carolina,covid,q75,2026-10-24,vanished
+North Carolina,influenza,popmean,2026-09-26,vanished
+North Carolina,influenza,q75,2026-10-24,vanished
+Oregon,covid,q75,2026-09-19,vanished
+Pennsylvania,rsv,popgeo,2026-10-24,vanished
+Pennsylvania,rsv,popmean,2026-10-24,vanished
+Texas,covid,median,2026-10-24,vanished
+Texas,covid,q75,2026-10-24,vanished
+West Virginia,covid,popmean,2026-10-10,vanished
+Wisconsin,covid,median,2026-09-12,vanished
+Wisconsin,covid,popgeo,2026-09-05,vanished
+Wisconsin,covid,popmean,2026-09-05,vanished
+Wisconsin,covid,q75,2026-09-12,vanished
+Wisconsin,influenza,popgeo,2026-09-05,vanished
+Wisconsin,influenza,popmean,2026-09-05,vanished
+Wisconsin,influenza,q75,2026-09-26,vanished
+Wisconsin,rsv,popgeo,2026-09-05,vanished
+Wisconsin,rsv,popmean,2026-09-05,vanished
+Arkansas,covid,popgeo,2026-08-15,appeared
+Maryland,covid,median,2026-09-19,appeared
+Michigan,covid,popgeo,2026-10-24,appeared
+Michigan,covid,popmean,2026-10-24,appeared
+Michigan,influenza,ed,2026-09-26,appeared
+Michigan,influenza,median,2026-10-17,appeared
+New York,influenza,popmean,2026-10-24,appeared
+North Carolina,influenza,popmean,2026-09-19,appeared
+North Carolina,influenza,q75,2026-10-03,appeared
+North Dakota,influenza,ed,2026-10-24,appeared
+Oregon,influenza,popmean,2026-10-24,appeared
+Oregon,rsv,median,2026-10-24,appeared
+Oregon,rsv,q75,2026-10-17,appeared
+Pennsylvania,influenza,popgeo,2026-10-24,appeared
+Texas,influenza,popgeo,2026-09-26,appeared
+Texas,influenza,popmean,2026-09-26,appeared
+Texas,rsv,popmean,2026-09-12,appeared
+West Virginia,covid,median,2026-09-12,appeared
+West Virginia,covid,q75,2026-09-05,appeared
+West Virginia,rsv,popgeo,2026-10-10,appeared
+Wisconsin,covid,median,2026-10-10,appeared
+Wisconsin,covid,popgeo,2026-08-29,appeared
+Wisconsin,covid,popgeo,2026-10-10,appeared
+Wisconsin,covid,popmean,2026-08-29,appeared
+Wisconsin,covid,q75,2026-09-05,appeared
+Wisconsin,influenza,popgeo,2026-10-03,appeared
+Wisconsin,influenza,popmean,2026-09-12,appeared
+Wisconsin,influenza,q75,2026-10-10,appeared
+Wisconsin,rsv,popgeo,2026-09-12,appeared
+Wisconsin,rsv,popmean,2026-09-12,appeared
