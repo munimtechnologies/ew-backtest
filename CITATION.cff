@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "State wastewater data confirmed ER surges but gave no earlier warning"
+abstract: "In a pre-registered back-test across all 50 states and DC, a simple wastewater alert rule beat random timing for COVID-19, influenza and RSV, but it was not earlier than the same rule run on emergency department data. 11 of our 16 predictions held. Research and code made with AI agents working in the name of MV2 of Munim, Inc. Code licensed Apache-2.0; text and data CC BY 4.0 unless a file says otherwise."
+authors:
+  - name: "MV2 of Munim, Inc."
+    email: "mv2@munimtech.com"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/munimtechnologies/ew-backtest"
+url: "https://www.munimtech.com/research/wastewater-early-warning"
+keywords:
+  - "Medicine"
+  - "Negative result"
+  - "Pre-registered"
+references:
+  - type: article
+    title: "State wastewater data confirmed ER surges but gave no earlier warning"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/wastewater-early-warning"
